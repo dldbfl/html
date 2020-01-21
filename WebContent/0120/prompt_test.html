@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/mystyle.css?after">
+<script type="text/javascript">
+	function inputProc(){
+		input1 = parseInt(prompt("첫번째 수입력", "정수로 입력"));
+		input2 = prompt("두번째 수입력", "정수로 입력");
+	}
+	function addProc() {
+		// 두개의 수를 입력 받는다.
+		inputProc();
+
+		res = input1 + " + " + input2 + " = "; // 그냥 글자로 표시
+
+		res += input1 + parseInt(input2); // 덧셈수행
+
+		document.getElementsByTagName('div')[0].innerHTML = res;
+		document.getElementsByTagName('div')[0].style.fontSize = '20px';
+	}
+	window.onload = function() {
+
+		tagdiv = document.getElementsByTagName('div')[1];
+
+	}
+	function subProc() {
+		inputProc();
+		sub = input1 - input2;
+
+		res = input1 + " - " + input2 + " = ";
+		res += sub;
+
+		tagdiv.innerHTML = res;
+		tagdiv.style.color = 'red';
+		tagdiv.style.fontSize = '20px';
+		
+	}
+	function multiProc() {
+		inputProc();
+
+		sub = input1 * input2;
+
+		res = input1 + " * " + input2 + " = ";
+		res += sub;
+
+		tagdiv.innerHTML = res;
+		tagdiv.style.color = 'red';
+		tagdiv.style.fontSize = '20px';
+	}
+	function divdeProc() {
+		inputProc();
+
+		sub = input1 / input2;
+
+		res = input1 + " / " + input2 + " = ";
+		res += sub;
+
+		tagdiv.innerHTML = res;
+		tagdiv.style.color = 'red';
+		tagdiv.style.fontSize = '20px';
+	}
+</script>
+<style>
+div {
+	border: 1px solid blue;
+	margin: 10px;
+	padding: 20px;
+	font-size: 12px;
+}
+</style>
+</head>
+<body>
+	<pre>
+확인버튼을 클릭하면 2개의 정수를 각각 입력해서
+덧셈을 수행 한다.
+
+입력 : prompt();
+리터결과형 : String
+
+덧셈을 수행하기 위해서 number 숫자형태로 변환
+parseInt()
+</pre>
+	<button type="button" onclick="addProc()">확인</button>
+	<br>
+	<br>
+	<div></div>
+	<br>
+	<br>
+	<button type="button" onclick="subProc()">빼기</button>
+	<button type="button" onclick="multiProc()">곱하기</button>
+	<button type="button" onclick="divdeProc()">나누기</button>
+	<div></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

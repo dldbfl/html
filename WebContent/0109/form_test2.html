@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel ="stylesheet" href="../css/mystyle.css?after">
+<title>Insert title here</title>
+</head>
+<body>
+    <pre>
+        submit이 발생되면 입력양식의 값을 서버페이지로 보낸다
+        입력 양식의 값은 name 속성을 이용한다.
+        
+        서버페이지(test.jsp)에서는 name속성값을 이용해서 요청된
+        값을 가져간다.
+        request.getParameter("username")
+        request.getParameter("userpass");
+
+        보내는 방식에는 get, post가 있다
+        get 방식: 입력값이 url주소 뒤에 ? 문자열 형식으로 보낸다.
+
+        post방식 : 입력값이 url주소 뒤에 붙지 않고 requestHeader에 숨겨서 보낸다.
+
+    </pre>
+    <form action="test2.jsp" method="post">
+			이름 : <input type="text"name="name" ><br>
+			이메일: <input type="text"name="email1" ><br>
+			이메일: <input type="email" name="email2"><br>
+       		<br>  
+			전화번호 : <input type="text" name="tel1"><br>
+			전화번호 : <input type="tel" name="tel2"><br>     
+			<br>  
+        	생년월일 : <input type="text"name="date1"><br>
+			생년월일 : <input type="date"name="date2"><br>     
+			<br>  
+			키 : <input type="text" name="height1"><br>
+			키 : <input type="number"name="height2><br>     
+        	<br>  
+        	<input type="submit" value="전송">
+    </form>
+    
+     <form action="test2.jsp" method="post">
+			<input type="text"name="name" placeholder="이름"><br>
+			<input type="text"name="email1"placeholder="Emailtext" ><br>
+			<input type="email" name="email2"placeholder="Email"><br>
+       		<br>  
+			<input type="text" name="tel1"placeholder="전화번호text"><br>
+			<input type="tel" name="tel2"placeholder="전화번호"><br>     
+			<br>  
+        	<input type="text"name="date1"placeholder="생일text"><br>
+			<input type="date"name="date2"placeholder="생일"><br>     
+			<br>  
+			<input type="text" name="height1"placeholder="키text"><br>
+			<input type="number"name="height2"placeholder="키number"><br>     
+        	<br>  
+        	<input type="submit" value="전송">
+    </form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href ="../css/mystyle.css?after">
+<script>
+	
+		function proc1(){
+
+		now = new Date();
+		nowString = now.toLocaleString();
+		dateString = now.toLocaleDateString();
+		timeString = now.toLocaleTimeString();
+		area = document.getElementsByTagName('textarea')[0];
+
+		data = now+"\n"+nowString+"\n"+dateString
+		+"\n"+timeString;
+
+		area.innerHTML = data;
+
+		// area.innerHTML = now+"\n";
+		// area.innerHTML += nowString+"\n";
+		// area.innerHTML += dateString+"\n";
+		// area.innerHTML += timeString+"\n";
+
+
+		// area.innerHTML = now+"\n"+nowString+"\n"+dateString
+		// +"\n"+timeString;
+	}
+</script>
+
+</head>
+<body>
+	<pre>
+		버튼을 클릭하면 textarea요소에 날짜와 시간을 출력한다.
+
+		textarea요소에 접근
+		area = document.getElementsByTagName('textarea')[0]
+		
+		area출력
+		area.innerHTML = now;
+	</pre>
+	<button onclick="proc1()" type="button">확인</button><br><br>
+
+	<textarea rows="10" cols="50"></textarea>
+</body>
+</html>

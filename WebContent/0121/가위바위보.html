@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- <link rel="stylesheet" href="../CSS/mystyle.css?after"> -->
+<script>
+	function proc(){
+		a = prompt("첫번째 입력","가위바위보");
+		b = prompt("두번째 입력","가위바위보");
+
+		res = "첫번째 : " + a + "<br>";
+	  	res += "두번째 : " + b + "<br>";
+		
+
+		if(a == b){
+			res ="비김";
+		}
+
+		if(a == "가위" && b == "보"|| 
+		   a == "보"   && b == "바위" ||
+		   a == "바위" && b == "보"){
+			   res += "결과 : 첫번째 사람이 이겼다";
+		   }
+		else{
+			res += "결과 : 두번째 사람이 이겼다.";
+		}
+
+		document.getElementsByTagName('div')[0].innerHTML = res;
+	}
+	
+</script>
+<body>
+	
+	<button onclick="proc()" type="button">가위바위보</button>
+	
+	<div></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

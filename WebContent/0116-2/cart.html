@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+  <style type="">
+  	div{
+  		float:left;
+  		width :600px;
+  		height : 200px;
+  		/* text-align : center; */
+  		display: inline;
+  	}
+  	#d1{
+  		width : 1000px;
+  		text-align : right;
+  	}
+  </style>  
+</head>
+<body>
+<body>
+    <h2 align="center">Product Contents</h2>
+    <br>
+    <form method="post" action = "add.jsp">
+    <div>
+        <hr>
+       "'Cpu'를 골라 담아주세요"
+        <hr>
+        <select name = "s1">
+            <option value ="---선택 없음---">---선택 없음---</option>
+            <option value = "라이젠 3600">라이젠 3600</option>
+            <option value = "인텔 i7 9700k">인텔 i7 9700k</option>
+            <option value ="i5 9600kf">i5 9600kf</option>
+            <option value = "라이젠 3700x">라이젠 3700x</option>
+            <option value = "라이젠 3500">라이젠 3500</option>
+            <option value = "라이젠 3500x">라이젠 3500x</option>
+            <option value = "인텔 i5 9400f">인텔 i5 9400f</option>
+        </select> 
+       </div> 
+       <div>
+         <hr>
+       "'Mainboard'를 골라 담아주세요"
+        <hr>
+        <select name = "s2">
+            <option value ="---선택 없음---">---선택 없음---</option>
+            <option value = "ASUS TUF B450M-PRO GAMING STCOM">ASUS TUF B450M-PRO GAMING STCOM</option>
+            <option value = "MSI B360M 박격포">MSI B360M 박격포</option>
+            <option value ="ASRock B450M PRO4 에즈윈">ASRock B450M PRO4 에즈윈</option>
+            <option value = "MSI MAG B450M 박격포 맥스">MSI MAG B450M 박격포 맥스</option>
+            <option value = "ASUS PRIME B365M-A 코잇">ASUS PRIME B365M-A 코잇</option>
+            <option value = "GIGABYTE B450 AORUS ELITE 피씨디렉트x">GIGABYTE B450 AORUS ELITE 피씨디렉트x</option>
+            
+        </select> 
+         </div> 
+       <div>
+          <hr>
+       "'Psu'를 골라 담아주세요"
+        <hr>
+        <select name = "s3">
+            <option value ="---선택 없음---">---선택 없음---</option>
+            <option value = "마이크로닉스 Classic II 600W +12V Single Rail 85+">마이크로닉스 Classic II 600W +12V Single Rail 85+</option>
+            <option value = "FSP HYPER K 500W 80PLUS Standard 230V EU">FSP HYPER K 500W 80PLUS Standard 230V EU</option>
+            <option value ="마이크로닉스 Classic II 500W +12V Single Rail 85+">마이크로닉스 Classic II 500W +12V Single Rail 85+</option>
+            <option value = "잘만 EcoMax 500W 83+">잘만 EcoMax 500W 83+</option>
+            <option value = "FSP HYPER K 600W 80PLUS Standard 230V EU">FSP HYPER K 600W 80PLUS Standard 230V EU</option>
+            <option value = "ABKO SUITMASTER SETTLER 600W 80PLUS Standard 230V EU">ABKO SUITMASTER SETTLER 600W 80PLUS Standard 230V EU</option>
+          
+        </select> 
+         </div> 
+       <div>
+         <hr>
+       "'Case'를 골라 담아주세요"
+        <hr>
+        <select name = "s4">
+            <option value ="---선택 없음---">---선택 없음---</option>
+            <option value = "ABKO NCORE 식스팬 풀 아크릴 LUNAR">ABKO NCORE 식스팬 풀 아크릴 LUNAR</option>
+            <option value = "ABKO NCORE 새턴 풀 아크릴 슬렌더">ABKO NCORE 새턴 풀 아크릴 슬렌더</option>
+            <option value ="ABKO NCORE 아수라 풀 아크릴">ABKO NCORE 아수라 풀 아크릴</option>
+            <option value = "DAVEN FT808 강화유리 블랙">DAVEN FT808 강화유리 블랙</option>
+            <option value = "대양케이스 ME NO.8 RGB 강화유리">대양케이스 ME NO.8 RGB 강화유리</option>
+            <option value = "잘만 S3 풀 아크릴">잘만 S3 풀 아크릴</option>
+        </select> 
+         </div> 
+       <div>
+         <hr>
+       "'Vga'를 골라 담아주세요"
+        <hr>
+        <select name = "s5">
+            <option value ="---선택 없음---">---선택 없음---</option>
+            <option value = "ZOTAC GAMING 지포스 RTX 2080 Ti AMP EXTREME CORE D6 11GB">ZOTAC GAMING 지포스 RTX 2080 Ti AMP EXTREME CORE D6 11GB</option>
+            <option value = "이엠텍 지포스 GTX 1660 SUPER STORM X Dual OC D6 6GB">이엠텍 지포스 GTX 1660 SUPER STORM X Dual OC D6 6GB</option>
+            <option value ="갤럭시 GALAX 지포스 RTX 2070 SUPER EX BLACK OC D6 8GB">갤럭시 GALAX 지포스 RTX 2070 SUPER EX BLACK OC D6 8GB</option>
+            <option value = "이엠텍 지포스 RTX 2060 STORM X Dual OC D6 6GB">이엠텍 지포스 RTX 2060 STORM X Dual OC D6 6GB</option>
+            <option value = "ASUS DUAL 라데온 RX 580 O8G D5 8GB">ASUS DUAL 라데온 RX 580 O8G D5 8GB</option>
+            <option value = "SAPPHIRE 라데온 RX 570 PULSE Optimized OC D5 4GB Dual-X">SAPPHIRE 라데온 RX 570 PULSE Optimized OC D5 4GB Dual-X</option>
+        </select> 
+         </div> 
+       <div>
+         <hr>
+       "'Monitor'를 골라 담아주세요"
+        <hr>
+        <select name = "s6">
+            <option value ="---선택 없음---">---선택 없음---</option>
+            <option value = "한성컴퓨터 TFG32F16V 1500R 리얼 165 게이밍">한성컴퓨터 TFG32F16V 1500R 리얼 165 게이밍</option>
+            <option value = "BenQ GW2780 아이케어 무결점">BenQ GW2780 아이케어 무결점</option>
+            <option value ="알파스캔 AOC 27V2Q 프리싱크 75 DP 시력보호 무결점">알파스캔 AOC 27V2Q 프리싱크 75 DP 시력보호 무결점</option>
+            <option value = "LG전자 24MK430H">LG전자 24MK430H</option>
+            <option value = "필립스 325M7 QHD 144 프리싱크 게이밍 무결점">필립스 325M7 QHD 144 프리싱크 게이밍 무결점</option>
+            <option value = "MSI 옵틱스 G27C4 커브드 게이밍 144">MSI 옵틱스 G27C4 커브드 게이밍 144</option>
+        </select> 
+        </div>
+        <br>
+        <br>
+        <div id = "d1">
+        <input type="submit" name ="btn" value="추가">
+        <input type="button" value="계산">
+    	</div>
+    </form>
+</body>
+
+
+</body>
+</html>

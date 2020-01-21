@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href ="../css/mystyle.css?after">
+<style>
+	
+	#header{
+	background: red;
+	width: 98.5%;
+	height: 50px;
+	text-align: center;
+	
+	}
+	#left{
+		background: orange;
+		width: calc(30% - 2%);
+		height: 300px;
+		float: left;
+		
+		
+	}
+	#right{
+		background: yellow;
+		width: calc(71% - 5px);
+		height: 300px;
+		float: left;
+		
+	}
+	#footer{
+		background: greenyellow;
+		width: 98.5%;
+		height: 55px;
+		clear: both;
+		text-align: center;
+		font-size: 14px;
+	}
+	#d44{
+		position: absolute;
+		top: 260px;
+		left: 70px;
+		width: 10%;
+		height: 10%;
+
+	}
+	span{
+		margin: 5px;
+		word-wrap: break-word;
+		padding: 5px;
+	}
+	p{
+		margin: 20px;
+		word-wrap: break-word
+	}
+
+		
+	
+</style>
+</head>
+<body>
+	<div id="header"><h1>My Blog Page</h1></div>
+	<div id="left"><h1><span>Links</span></h1>
+		<ul>
+			<li><a href="https://www.w3schools.com/">W3C</a></li>
+			<li><a href="https://www.mozilla.org/ko/firefox/new/">MoZILLA</a></li>
+			<li><a href="https://www.htmldog.com/">HTML Dogs</a></li>
+		</ul>
+		<br><br>
+		<img id = "d44" src="../images/홍길동3.jpg">
+ 
+	</div>
+	<div id="right">
+		<h2><span>Semantic Tags</span></h2>
+		
+		<p>시멘틱 요소(Semantic)들은 브라우저에게 요소의 의미나 목적을 명확하게 알려주는 요소이다.</p> 
+		<br>
+		<h2><span>div와 span</span></h2>
+		<p>div은 'divide'의 약자로서 페이지를 논리적인 섹션으로 분리하는데 사용되는 태그이다. span요소는 인라인 요소로서 텍스트를 위한 컨테이너로 사용할 수
+		있다.</p>
+	</div>
+	<div id="footer"><br>Copyright (c) 2013 Hong</div>
+	
+
+</body>
+</html>

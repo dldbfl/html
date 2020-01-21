@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href ="../css/mystyle.css?after">
+<style>
+	div{
+		position: absolute;
+		width: 100px;
+		height: 100px;
+	}
+	#d1{
+		top: 50px;
+		left: 20px;
+		background-color: palegreen;
+		z-index: 3;
+	}
+	#d2{
+		top: 60px;
+		left: 40px;
+		background-color: violet;
+		z-index: 4;
+	}
+	#d3{
+		top: 70px;
+		left: 60px;
+		background-color: gold;
+	}
+	#d4{
+		top: 80px;
+		left: 80px;
+		background-color: aqua;
+		z-index: 5;
+	}
+	hr{
+		position: relative;
+		top: 130px;
+	}
+	img{
+		position: relative;
+		top: 170px;
+		width: 360px;
+		height: 360px;
+		z-index: -1 ;
+	}
+
+</style>
+</head>
+<body>
+<div id="d1"></div>
+<div id="d2"></div>
+<div id="d3"></div>
+<div id="d4"></div>
+<br>
+<hr color="red">
+<img src="../images/조커3.gif" width="200" height="200">
+<p>img 요소의 z-index가 -1 이므로 다른 요소의 뒤에 배치한다.</p>
+</body>
+</html>

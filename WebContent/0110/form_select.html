@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href="../css/mystyle.css?after">
+<style>
+
+    form, div{
+        width: 50%;
+        margin: 30px auto;
+        padding: 30px;
+        border: 3px solid aquamarine;
+    }
+</style>
+<script>
+    function getValue(){
+        //tag name이 select요소로 접근, 값을 가져온다.
+        //name이 namelist요소로 접근, 값을 가져온다.
+        a = document.getElementsByName('namelist')
+        x = a[0].value;
+        //div에 출력한다.   
+            //tag이름이 div인 요소로 접근, 
+        b = document.getElementsByTagName('div')
+            //출력 - innerHTML
+        b[0].innerHTML =x;
+    }
+</script>
+</head>
+<body>
+    <pre>
+        tag 이름이 select요소로 접근, 값을 가져온다.
+            document.getElementByTagName('select')[0].value
+        
+            a = document.getElementByTagName('select')
+            a[0].value
+
+        name이 namelist요소로 접근, 값을 가져온다.
+            document.getElementByName('namelist')[0].value
+        
+            a = document.getElementByName('namelist')
+            a[0].value
+
+        tag이름이 div인 요소로 접근, 출력 - innerHTML
+              b = document.getElementByTagName('div')
+              b[0].innerHTML= x;
+
+        innerHTML을 이용해서 출력할 수 있는 태그들 
+            input,texarea,select을 제외한 모든 요소들
+            
+
+    </pre>
+    <form>
+        <h3>선택하세요.</h3>
+        <select onchange="getValue()" name="namelist">
+            <option value="192.168.205.46">강현철</option>
+            <option value="192.168.205.37">정보람</option>
+            <option value="192.168.205.42">이병훈</option>
+            <option value="192.168.205.32">김지선</option>
+            <option value="192.168.205.4">연은주</option>
+            <option value="192.168.205.29">이승재</option>
+            <option value="192.168.205.33">구한나</option>
+            <option value="192.168.205.45">박진영</option>
+            <option value="192.168.205.21">이누리</option>
+            <option value="192.168.205.30">강현지</option>
+
+        </select>
+    </form>
+
+    <div></div>
+
+</body>
+</html>

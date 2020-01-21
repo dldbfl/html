@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href ="../css/mystyle.css?after">
+
+<!-- 외부 스크립트-->
+<script src="../js/myscript.js">
+</script>
+
+<script>
+	function proc1(){
+		area = document.getElementsByTagName('textarea')[0];
+
+		r = parseInt(Math.random()*255)
+		g = parseInt(Math.random()*255)
+		b = parseInt(Math.random()*255)
+
+		r16 = r.toString(16);
+		g16 = g.toString(16);
+		b16 = b.toString(16);
+
+		// area.style.background ='#'+r16 +g16+b16;
+
+		area.style.background ='rgb('+r+','+g+','+b+')';
+	}
+
+</script>
+
+<style>
+	
+</style>
+
+</head>
+<body>
+	<button onclick="proc1()" type="button">내부</button>
+	<button onclick="proc2()" type="button">외부</button>
+	<button type="button">인라인</button>
+	<br>
+	<textarea rows="20" cols="50"></textarea>
+	
+</body>
+</html>

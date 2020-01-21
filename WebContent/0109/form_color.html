@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function proc1(){
+// 		alert("여기는 proc함수입니다.")
+
+		//id가 col인 곳에서 선택된 색상을 가져온다.
+		a = document.getElementById('col');
+		x = a.value
+		console.log(x);
+		//div의 배경색을 1번에서 수행된 결과값으로 변경한다.
+		b = document.getElementsByTagName('div');
+		b[0].style.background = x;
+	}
+</script>
+
+<style>
+	div{
+		width: 100%;
+		height: 300px;
+		border: 2px solid orchid;
+		margin: 20px;
+
+		/* border-width: 2px;
+		border-style: solid;
+		border-color: cornflowerblue; */
+	}
+</style>
+</head>
+<body>
+	<pre>
+	body태그안의 어떤 요소에 접근하기 위한 방법
+	document는 window객체의 하위 객체
+	실행시 body태그의 기술된 각각의 요소들로 document를 생성한다.
+	생성된 document를 window에 보여준다.
+
+	body태그안의 어떤 요소에 접근하기 위한 방법
+	a= document.getElementById('col')(id or class or ?)
+	a.value
+
+	b = document.getElementsByTagName('div')
+	b.style.background = a.value
+	</pre>
+
+	<form>
+
+		<input type="color" id= "col">
+		<input onclick="proc1()" type="button" value="submit">
+			
+    </form>
+	
+	<div>
+		
+	</div>
+</body>
+</html>

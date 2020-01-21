@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+form{
+	width: 50%;
+	border: 15px outset blue;;
+	padding: 10px;
+	/* margin-top: 50px;
+	margin-left: 100px; */
+	
+	margin: 40px auto;
+}
+</style>
+</head>
+<body>
+	<form action="form_type.jsp" method="post">
+		아이디 :   <input type="text" value="aaa" name="id" size="30"><br>
+		비밀번호 : <input type="password" name="pass"><br> 
+		<input type="hidden" value="korea" name="name"><br>
+		성별 : 
+		<input type="radio" checked value="m" name="gender">남자
+		<input type="radio" value="f" name="gender">여자
+		<br>
+		관심 분야 : 
+		<input type="checkbox" checked name="like" value="java">JAVA 	
+		<input type="checkbox" name="like" value="jsp">JSP 	
+		<input type="checkbox" name="like" value="db">DB 	
+		<input type="checkbox" name="like" value="htmlcss">HTML/CSS 	
+		<input type="checkbox" name="like" value="js">JAVAScript
+		<br>
+		첨부파일
+	 	<input type="file" ><br>
+	 	<br>
+	 	<input type="submit" value="전송">
+	 	<input type="reset" value="취소">
+	 	<input type="image" src="../images/check.png">
+	</form>
+</body>
+</html>

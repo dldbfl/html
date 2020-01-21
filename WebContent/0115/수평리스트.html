@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <link rel="stylesheet" href="../css/mystyle.css?after">
+<style>
+
+   ul#u2{
+       list-style-type: none;
+
+       border-top: 2px solid red;
+       border-bottom: 2px solid red;
+
+       padding-top: 30px;
+       padding-bottom: 30px;
+   }
+   li.li2{
+       display: inline;
+       margin: 10px;
+   }
+   #u2 a{
+       /* //글자간격 */
+       letter-spacing: 5px;
+       font-size: 20px;
+       text-transform: uppercase;
+       text-decoration: none;
+   }
+   
+
+</style>
+</head>
+<body>
+    <pre>
+        ul.#u2 : ul과 u2
+        ul#u2 : ul인 u2
+        ul #u2 : ul밑의 u2 (u2아래까지 포함)
+        ul > #u2 : ul 밑의 u2(u2만)
+    </pre>
+    <br><br>
+    <ol> 
+        <li><a href="#">About</a></li> 
+        <li><a href="#">Blog</a></li>      
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact</a></li>
+    </ol>
+    <br><br>
+    <ul id ="u2"> 
+        <li class ="li2"><a href="#">About</a></li> 
+        <li class ="li2"><a href="#">Blog</a></li>      
+        <li class ="li2"><a href="#">Home</a></li>
+        <li class ="li2"><a href="#">Contact</a></li>
+    </ul>
+</body>
+</html>

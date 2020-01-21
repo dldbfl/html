@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+pre{
+	background : mintcream;
+	/* padding : 10px ;   */
+	margin : 5px ; 
+	/* border : 2px solid gold; */
+	font-weight: bold;
+	font-size: 20px;
+	height: auto;
+
+	/* width: 50%; */
+	border: 15px outset gold;;
+	padding-top: 25px;
+
+	
+	
+}

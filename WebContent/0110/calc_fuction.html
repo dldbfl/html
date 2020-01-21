@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <script>
+        function calc(){
+            //id가 price인 요소에 접근, 값을 가져오기
+            a = document.getElementById('price');
+            x = a.value;
+            //id가 su인 요소에 접근, 값을 가져온다.
+            b = document.getElementById('su');
+            y = b.value;
+            
+            //계산
+            res = x*y;
+            
+            //출력
+
+            output = "가격 : " + x + "\n" +
+                     "수량 : " + x + "\n" +
+                     "금액 : " + res;
+
+            alert(output);
+            
+            너부리야ㅏㅏㅏㅏㅏㅇ너부리야ㅏ아아
+        }
+    </script>
+    <style>
+    form{
+        width: 50%;
+        border: 15px outset blue;;
+        padding: 10px;
+        /* margin-top: 50px;
+        margin-left: 100px; */
+        
+        margin: 40px auto;
+        }   
+    </style>
+</head>
+<body>
+    
+    <form>
+        가격 : <input type="text"id = "price"><br>
+        수량 : <input type="text"id = "su"><br>
+        <input type="button" value="확인" onclick="calc()">
+    </form>
+    
+    <br>
+    <hr>
+    <button onclick="alert('너부리야ㅏㅏㅏㅏㅏㅇ너부리야ㅏ아아')">클릭</button>
+    <hr>
+
+    <form action="texarea.jsp" method="post">
+        이름 : <input type="text" name="name"><br><br>
+        고객의 소리<br/>
+        <textarea name = "area" cols="50" rows="10"></textarea><br>
+        <br>
+        가격 : <input type="text"id = "price"><br>
+        수량 : <input type="text"id = "su"><br>
+        <input type="button" value="확인" onclick="calc()">
+    
+        <button>전송</button>
+    
+    </form>
+
+</body>
+</html>

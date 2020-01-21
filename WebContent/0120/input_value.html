@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/mystyle.css?after">
+<script>
+    window,onload = function(){
+        input1 = document.getElementsByTagName('input')[0];
+        input2 = document.getElementsByTagName('input')[1];
+        input3 = document.getElementsByTagName('input')[2];
+        output = document.getElementsByTagName('div')[0];
+    }
+	function addProc(){
+        input1 = input1.value;
+        input2 = input2.value;
+
+        add = paresInt(input1) + paresInt(input2);
+        input3.value = add;
+    }
+
+    
+	function mutiProc(){
+        input1 = input1.value;
+        input2 = input2.value;
+
+        muti = paresInt(input1) * paresInt(input2);
+        input3.value = mutl;
+    }
+
+    
+    function subProc(){
+        input1 = input1.value;
+        input2 = input2.value;
+
+        sub = paresInt(input1) - paresInt(input2);
+        input3.value = sub;
+    }
+
+    
+    function divideProc(){
+        input1 = input1.value;
+        input2 = input2.value;
+
+        divide = parseInt(input1) / parseInt(input2);
+        input3.value = divide;
+    }
+		function Proc(abc){
+        //alert(abc.innreHTML);
+        //버튼의 글자
+        txt = abc.textContent;
+        //입력한 값
+        vinput1 = input1.value;
+        vinput2 = input2.value;
+        
+        console.log(vinput1 + "," + vinput2);
+
+        if(txt == ' + '){
+            res = parseInt(vinput1) + parseInt(vinput2);
+        }else if(txt == ' - '){
+            res = parseInt(vinput1) - parseInt(vinput2);
+        }else if(txt == ' * '){
+            res = parseInt(vinput1) * parseInt(vinput2);
+
+        }else if(txt == ' / '){
+            res = parseInt(vinput1) / parseInt(vinput2);
+        }
+        input3.value = res;
+
+        output.innerHTML = "<h2>" + res + "</h2>";
+        
+        //입력한 그래도 보여지는 textContent
+		//output.textContent = "<h2>" + res + "</h2>";
+	}
+
+
+</script>
+</head>
+<body>
+<h2>덧셈 계산기</h2>
+
+숫자 : <input type="text"><br>
+숫자 : <input type="text"><br>
+결과 : <input type="text"><br>
+
+
+
+<button onclick="Proc(this)" type="button"> + </button>
+<button onclick="Proc(this)" type="button"> * </button>
+<button onclick="Proc(this)" type="button"> - </button>
+<button onclick="Proc(this)" type="button"> / </button>
+<br><br>
+<div>
+
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

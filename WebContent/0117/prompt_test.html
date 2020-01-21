@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href ="../css/mystyle.css?after">
+<script>
+    var input;
+	
+	function input(){
+		aa = prompt("글자쓰세요","Nuri")
+		//aa를 id가 result인곳에 출력
+		document.write(aa);
+		document.getElementById('result').innerHTML = aa
+	}
+</script>
+<style>
+	span{
+		display: inline-block;
+		border: 1px solid gray;
+		width: 175px;
+		height: 19px;
+	}
+</style>
+
+</head>
+<body>
+	<pre>
+		버튼 클릭시 문자를 출력
+	</pre>
+	<!-- <script>
+		var age = prompt("나이를 입력하세요", "만나이로 입력합니다.");
+	</script> -->
+
+	<button onclick="input()" type="button">입력</button>
+	
+</body>
+</html>

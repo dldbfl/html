@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/mystyle.css?after">
+<script>
+	function proc1(){
+
+		res1 = document.getElementById('result1');
+		str = "";
+		for(i=1; i<=10; i++){
+			str += i + "<br>";
+		}
+		res1.innerHTML = str;
+	}
+
+	function proc2(){
+
+		res2 = document.getElementById('result2');
+		str = 0;
+		for(i=1; i<=10; i++){
+			str = str + i;
+		}
+		res2.innerHTML = str;
+	}
+
+	function proc3(){
+		
+		a = prompt("구구단 출력할 숫자를 입력");
+		
+		res3 = document.getElementById('result3');
+		식 = "";
+		str = "";
+		for(i=1; i<10; i++){
+			답 = a * i;
+			식 = a + "*" + i +"=";
+			str += 식+답+"<br>";
+		}
+		res3.innerHTML = str;
+	}
+	function proc4(){
+		
+		res4 = document.getElementById('result4');
+		str = "";		
+		for(j=2; j<10; j++){		
+			식 = "";
+			for(i=1; i<10; i++){
+				답 = j * i;
+				식 = j + "*" + i +"=";
+				str += 식+답+"<br>";
+			}
+			str += "<br>";
+			res4.innerHTML = str;
+		}
+	}
+	function proc5(){
+		
+		res5 = document.getElementById('result5');
+		str = "";		
+		for(j=2; j<10; j++){
+			식 = "";			
+			for(i=1; i<10; i++){
+				답 = j * i;
+				식 = j + "*" + i +"=";
+				str += 식+답+"\t";
+			}
+			str += "<br>";
+			res5.innerHTML = str;
+		}
+		res5 = document.getElementById('result5').style.whiteSpace = "pre";
+	}
+
+	function proc6(){
+	ttab = "<h3>구구단표</h3>";
+	ttab += "<table border ='1'>";
+	for (var i = 1; i <=9; i++) {
+		ttab += "<tr>";
+		ttab += "<td>"+i+"</td>";
+		for (var j = 2; j <= 9; j++) {
+			ttab += "<td>"+ i*j +"</td>";
+		}
+		ttab += "</tr>";
+	}
+	ttab += "</table>";
+
+	document.getElementById('result6').innerHTML = ttab;
+}
+	// function proc(){
+	// 	a = prompt("첫번째 입력","가위바위보");
+	// 	b = prompt("두번째 입력","가위바위보");
+
+	// 	res = "첫번째 : " + a + "<br>";
+	//   	res += "두번째 : " + b + "<br>";
+		
+
+	// 	if(a == b){
+	// 		res ="비김";
+	// 	}
+
+	// 	if(a == "가위" && b == "보"|| 
+	// 	   a == "보"   && b == "바위" ||
+	// 	   a == "바위" && b == "보"){
+	// 		   res += "결과 : 첫번째 사람이 이겼다";
+	// 	   }
+	// 	else{
+	// 		res += "결과 : 두번째 사람이 이겼다.";
+	// 	}
+
+	// 	document.getElementsByTagName('div')[0].innerHTML = res;
+	// }
+	
+</script>
+<style>
+	div{
+		height: auto;
+		padding: 10px;
+		margin: 10px;
+		border: 1px solid orange;
+	}
+</style>
+<body>
+	<h3>1~10까지 출력</h3>
+	<button onclick="proc1()" type="button">1~10</button>
+	<div id = "result1"></div>
+	<hr>
+	
+	<h3>1~10까지 합</h3>
+	<button onclick="proc2()" type="button">1~10합</button>
+	<div id = "result2"></div>
+	<hr>
+
+	<h3>입력한 수의 구구단</h3>
+	<button onclick="proc3()" type="button">구구단</button>
+	<div id = "result3"></div>
+	<hr>
+
+	<h3>구구단 전체</h3>
+	<button onclick="proc4()" type="button">구구단 전체</button>
+	<div id = "result4"></div>
+	<hr>
+
+	<h3>구구단 전체-가로</h3>
+	<button onclick="proc5()" type="button">구구단 전체-가로</button>
+	<div id = "result5"></div>
+	<hr>
+
+	<h3>구구단 전체-테이블</h3>
+	<button onclick="proc6()" type="button">구구단 전체-테이블</button>
+	<div id = "result6"></div>
+	<hr>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

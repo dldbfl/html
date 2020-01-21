@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href="../css/mystyle.css?after">
+<style>
+    
+    legend{
+        font-size: 1.1em;
+        margin: 5px;
+        border: 2px solid turquoise;
+    }
+    #name,#email{
+        width: 250px;
+    }
+    #in1{
+        width: 600px;
+        height: 200px;
+    }
+    fieldset{
+        width: 50%;
+    }
+    /* .txt{
+        border : 2px solid pink;
+    } */
+    input[class=txt]{
+        border: 2px solid peachpuff;
+    }
+    /* #area{
+        border : 3px dotted orangered;
+    } */
+    textarea[id=area]{
+        border: 3px dotted orchid;
+    }
+    input[type=submit]{
+        background-color: palegreen;
+    }
+    input[type=reset]{
+        background-color: salmon;
+    }
+
+</style>
+</head>
+<body>
+
+    <h1>이메일 전송화면</h1>
+    <fieldset>
+       
+            <legend>이메일 전송하기</legend>
+            
+            <label>이름 :</label>
+            <input class="txt" id ="name" type="text" value="korea"><br>
+            
+            <label>이메일 주소 :</label>
+            <input class="txt" id = "email" type="email "><br>
+
+            <label>내용: </label><br>
+            <textarea id= "area" rows="5" cols="50" type="contents"></textarea>
+            <br>
+                <input type="submit" value="전송">
+                <input type ="reset"value="재설정">
+
+    </fieldset>
+
+    <h1>회원 가입 화면</h1>
+    <form action="formtest.jsp" method="post">
+        <fieldset>
+
+            <legend>회원가입 입력하기</legend>
+            <label>이름 :</label>
+            <input id ="name" class="txt" type="text" value="korea" name="name"><br>
+            
+            <label>주소 :</label>
+            <input id = "email" class="txt" type="txt" name="email"><br>
+
+            <label>email :</label>
+            <input id = "email" class="txt" type="email "><br>
+
+            <label>male</label>
+            <input type="radio"> <br>
+
+            <label>female</label>
+            <input type="radio"> <br>
+           		<input type="submit" value = send></input>
+                <input type ="reset"value="reset">
+
+        </fieldset>
+    </form>
+</body>
+</html>

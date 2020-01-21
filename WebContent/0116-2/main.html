@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href ="../css/mystyle.css?after">
+<style>
+
+
+	a:link {text-decoration: none; color: hotpink;}
+	a:visited {text-decoration: none; color: hotpink;}
+	a:active {text-decoration: none; color: red;}
+	a:hover {text-decoration: none; color: greenyellow;}
+	body{
+		background-color: black;
+	}
+	#header{
+	/* background: mintcream; */
+	letter-spacing : 30px;
+	text-align: center;
+	
+	}
+	#d44{
+		/* position: absolute; */
+		/* top: 10px;
+		left: 20px; */
+		width: 6%;
+		height: 1%
+		text
+	}	
+	h3{
+		width: 110px;
+		float: left;
+		height: 10px;
+		
+	}
+	#category{
+	/* background-color: mintcream; */
+	float: left;
+	border: 2px outset red;
+	width: calc(31% - 300px);
+	height: 200px;
+	text-align: center;
+	font-size: 15px;
+	list-style-type: none;
+	}
+
+	#tb1{
+	width : calc(36% - 300px);
+	height: 450px;
+	}
+	#right{
+	
+	color: white;
+		width: calc(30% - 200px);
+		height: 400px;
+		margin-top: -70px;
+	float : right;
+	border: 3px outset red;
+	padding : 5px;
+	}
+
+	footer{
+
+	/* background: mintcream; */
+	width: 100%;
+	height : 40px;
+	clear : both;
+	color : red;
+	letter-spacing: 3px;
+	text-align: center;
+	} 
+
+	#iframe{
+		
+	background-image: url("../images/눈내리는.gif") ;
+	color: white;
+		
+		width: calc(70% - 100px);
+		margin-left: calc(9% - 100px);
+		float: left;
+		height: 500px;
+		/* border: 1px solid; */
+		
+	} 
+	#footer{
+	
+		width: 98.5%;
+		height: 55px;
+		clear: both;
+		text-align: left;
+		font-size: 14px;
+	}
+
+	
+	p{
+		/* margin: 50px; */
+		word-wrap: break-word
+	}
+
+
+
+
+   ul#topbar{
+       list-style-type: none;
+       border-top: 2px solid red;
+       border-bottom: 2px solid red;
+
+       padding-top: 10px;
+       padding-bottom: 10px;
+	   text-align: center;
+	   letter-spacing : 25px;
+   }
+   li.tbword{
+       display: inline;
+       margin: 10px;
+   }
+	#topbar a{
+       /* //글자간격 */
+       letter-spacing: 5px;
+       font-size: 25	px;
+       text-transform: uppercase;
+       text-decoration: none;
+   }
+
+
+	
+</style>
+</head>
+<body>
+	<header id="header">		
+		<img id = "d44" src="../images/넷플릭스.png">
+		<h1>
+			<a href="https://www.w3schools.com/">
+				<div>
+					Netflix
+				</div>
+			</a>
+		</h1>
+		<ul id ="topbar"> 
+			<li class ="tbword"><a href="#">Netflix</a></li> 
+			<li class ="tbword"><a href="#">Recommend</a></li>      
+			<li class ="tbword"><a href="#">Original</a></li>
+			<li class ="tbword"><a href="#">Films</a></li>
+		</ul>		
+	</header>
+
+
+	<h3>카테고리</h3>
+	<br>
+	<br>
+	<br>
+	
+
+		<table id ="category" border="1">
+			<tr>
+				<td><li><a target="ifr" href="../0116-2/로맨스.html">로맨스</a></li></td>
+			</tr>
+			<tr>
+				<td><li><a target="ifr" href="../0116-2/스릴러.html">스릴러</a></li></td>
+			</tr>
+			<tr>
+				<td><li><a target="ifr" href="../0116-2/드라마.html">드라마</a></li></td>
+			</tr>   
+			<tr>
+				<td><li><a target="ifr" href="../0116-2/코미디.html">코미디</a></li></td>
+			</tr>
+		</table>
+
+ 	<form id="right">
+        <p><div id="shopcart">
+			<h4>Shoping cart</h4>
+			현재 카트에 물품이 없습니다.
+			<hr>
+			<a href="">쇼핑카트 보기</a>
+			<hr>
+				<legend><h4>LOG IN</h4></legend>
+					<label>아이디 :</label><br>
+					<input class="txt" id ="name" type="text" value=""><br>
+					
+					<label>패스워드 :</label><br>
+					<input class="txt" id = "email" type="email "><br>
+			<br>
+                <input type="button" value="로그인">
+				<input type ="button"value="초기화"> <br>
+				<hr>
+				<a href="../0116-2/join.html" target ='ifr'>회원가입</a>
+				<a href="../0116-2/search.html" target ='ifr'>초기화/분실</a>
+				<hr>
+        </div></p>
+	</form>
+
+<div id="iframe">
+	<iframe seamless name = "ifr" height=100% width=100% frameborder=0 
+	framespacing=0 marginheight=0 marginwidth=0 scrolling=no vspace=0>
+	</iframe>
+</div>
+
+<footer>Copyright (c) 2020 넷플릭스</footer> 
+
+	
+
+</body>
+</html>
