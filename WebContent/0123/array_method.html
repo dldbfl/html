@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/mystyle.css?after">
+	<style>
+	div{
+		height: auto;
+		padding: 10px;
+		border: 1px dotted dodgerblue;
+	}
+	</style>
+
+<script>
+	str = ["누리","한나","진영","현지","태홍","향한","누리"]
+	str2 = ["현철","종민","대석","보람","지형","은주","승재"]
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	function  indexProc(){
+	 //이름 입력 
+	 name = prompt("이름입력 ..");
+	 idx =    str.indexOf(name);
+	 
+	 res = "indexOf(" + name + ") : ";
+	 if(idx >= 0){
+		 res += name + "님은 " + idx  + "에서 발견했다!";
+	 }else {
+		 res += name + "님을 놓쳤다.. "
+	 }
+	 
+	 document.getElementById("result1").innerHTML = res;
+ }
+ function indexStartProc(){
+	 // 누리들을 찾는다.(횟수만큼 반복 -1이 나올때까지)
+	 name = prompt("이름입력 ..");
+	 idx = 0;
+	 res = "lastIndexOf(" + name + ") : " ;
+	 while(true){
+		 idx = str.indexOf(name, idx)
+		
+
+		 if(idx == -1)break;
+		 res += idx + "번째 ";
+		 idx++;
+	 }
+	 document.getElementById("result1").innerHTML = res;
+ }
+
+ function  lastProc(){
+	 //이름 입력 
+	 name = prompt("이름입력 ..");
+	 idx =    str.lastIndexOf(name);
+	 
+	 res = "lastIndexOf(" + name + ") : " ;
+	 if(idx >= 0){
+		 res += name + "님은 " + idx  + "에서 발견했다!";
+	 }else {
+		 res += name + "님을 놓쳤다.. "
+	 }
+	 document.getElementById("result1").innerHTML = res;
+ }
+ 
+ function PushProc(){
+	 
+	 name = prompt("이름써줘")
+	 str.push(name);
+	 document.getElementById("result2").innerHTML = str;
+
+ }
+
+ function popProc(){
+
+	//  name = prompt("이름써줘")
+	 str.pop();
+	 document.getElementById("result2").innerHTML = str;
+
+
+ }
+
+ function unshift(){
+	 
+	 name = prompt("이름써줘")
+	 str.unshift(name);
+	 document.getElementById("result3").innerHTML = str;
+
+ }
+
+ function shift(){
+
+	//  name = prompt("이름써줘")
+	 str.shift();
+	 document.getElementById("result3").innerHTML = str;
+
+
+ }
+
+ function slice(){
+	 newstr = str.slice(1,6);
+
+	 res = "원래배열 : "+ str + "<br>"
+	 res += "str.slice(1,6) : " + newstr + "<br>"
+	 document.getElementById("result4").innerHTML = res;
+ }
+ function splice(){
+	var fruits = ["사과", "Orange", "Apple", "Mango"];
+	 addname = "";
+	 t1 = "";
+	 res = "원래배열 : "+ str + "<br>"
+		// while(t1 == true){
+		// 	addname += prompt("사람을 추가하세요.")+","
+		// 	if(addname == 0) t1=false;
+		// }
+
+	 newstr = str.splice(prompt("시작위치"),prompt("지울갯수"),prompt("사람을 추가하세요."))+ "<br>"
+	 res += "str.splice(지운거) : " + newstr 
+	 res += "str.splice() : " + str + "<br>"
+	 document.getElementById("result4").innerHTML = res;
+
+ }
+	
+ function concat(){
+	res = "기존 배열 : "+ str + "<br>"
+	res += "뉴 배열 : "+ str2 + "<br>"
+	res += "퓨전 배열 : "+str.concat(str2)
+	document.getElementById("result5").innerHTML = res;
+
+	
+
+ }
+ function concatsam(){
+	newarr =    str.concat(fruits);
+	 
+	 res = "str의 길이 : " + str.length + "<br>";
+	 res += "fruits의 길이 : " + fruits.length + "<br>";
+	 res += "newarr 의 길이 : " + newarr.length + "<br>";;
+	 
+	 for(i=0; i<newarr.length;i++){
+		 res += i + "번째 요소 :" + newarr[i] +  "<br>";;
+	 }
+	 
+	 
+	 document.getElementById("result5").innerHTML = res;
+ }
+ 
+ function join(){
+	res = "";
+	res = "기존 배열 : "+ str + "<br>"
+	res += "뉴 배열 : "+ str2 + "<br>"
+	res += "퓨전 배열 : "+str.join(str2)
+	document.getElementById("result5").innerHTML = res;
+
+ }
+</script>
+</head>
+<body>
+	<div>
+		<pre>
+		<strong>01 이름을 입력받아 위치값 알아내기</strong>
+		str = ["누리","한나","진영","현지","태홍", "향한", "누리"]
+		<br>
+		indexOf(item)
+		indexOf(item,start)
+		lastIndexOf(item)
+		</pre>
+	</div>
+	<br>
+	<button type="button" onclick="indexProc()">indexOf</button>
+	<button type="button" onclick="indexStartProc()">indexOf_start</button>	
+	<button type="button" onclick="lastProc()">lastIndexOf</button>	
+	<br><br>
+	<div id ="result1"></div>
+	<br><hr><br>
+
+		<pre>
+		<strong>02 배열의 요소를 추가/삭제</strong>
+		<br>
+		push(item)
+		pop()
+		</pre>
+
+	<button type="button" onclick="PushProc()">PushProc</button>
+	<button type="button" onclick="popProc()">popProc</button>	
+	<br><br>
+	<div id ="result2"></div>
+	<br><hr><br>
+
+		<pre>
+		<strong>03 배열의 처음에 요소를 추가/삭제</strong>
+		<br>
+		unshift(item)
+		shift()
+		</pre>
+
+	<button type="button" onclick="unshift()">unshift</button>
+	<button type="button" onclick="shift()">shift</button>	
+	<br><br>
+	<div id ="result3"></div>
+	<br><hr><br>
+
+
+		<pre>
+		<strong>04 slice(start, end) : start~ end-1까지의 요소를 짤라서
+				  새로운 배열을 만든다.
+				  splice(시작 위치,지우는 갯수,추가할거,추가할거,...) 
+				  : 배열 일부를 수정한다, 일정 범위를 삭제하고
+				  새로운 요소를 삽입한다.
+				  
+		</strong>
+		<br>
+		</pre>
+
+	<button type="button" onclick="slice()">slice</button>
+	<button type="button" onclick="splice()">splice</button>
+
+	<br><br>
+	<div id ="result4"></div>
+	<br><hr><br>
+
+	<pre>
+		<strong>05 a.concat(b) : a배열과 b배열을 합쳐서 새로운 배열을 만든다.
+				   b.join(b) : a배열과 b배열이 합쳐서 하나의 
+				   			       문자열로 변환
+				  
+		</strong>
+		<br>
+		</pre>
+
+	<button type="button" onclick="concat()">concat</button>
+	<button type="button" onclick="concatsam()">concatsam</button>
+	<button type="button" onclick="join()">join</button>
+
+	<br><br>
+	<div id ="result5"></div>
+	<br><hr><br>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

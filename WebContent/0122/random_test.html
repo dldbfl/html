@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<style>
+ div{
+	   width: 200px;
+	   height : auto;
+	   padding : 10px;
+	   border : 3px solid plum;
+	   background: pink;
+  }
+</style>
+
+<script> 
+	function proc1(){
+		str="";
+		k=0;
+		while(k<10){
+			for(i=0; i<5; i++){
+				a =  parseInt(Math.random()*100+1)	;
+				str += a+" ";
+				// getElement's'ByTagName 태그네임은 s가 붙는다.
+				// 붙는다. 까먹지 말자. 
+			}	
+			str += "<br>";
+			k++		
+			//div에 출력
+			document.getElementsByTagName('div')[0].innerHTML = str;
+		}
+	}
+	function proc2(but){
+		but.style.display = "none";
+		// 규칙적인 시간간격으로 실행 : setInterval()
+		x = setInterval(function(){
+			str = "";
+			for(i=0; i<5; i++){
+				a =  parseInt(Math.random()*100+1)	;
+				str += a+" ";
+				// getElement's'ByTagName 태그네임은 s가 붙는다.
+				// 붙는다. 까먹지 말자. 
+			}	
+			document.getElementsByTagName('div')[1].innerHTML = str;
+		},50)
+		console.log(x);
+	}
+	function proc3(){
+		clearInterval(x)
+		document.getElementById('run').style.display = "inline"
+	}
+
+</script>
+
+</head>
+<body>
+	<pre>
+		버튼 클릭할 때 마다 5개씩 10줄이 출력된다.
+	</pre>
+	<input onclick="proc1()" type="button" value="실행">
+	<br><br>
+	<br><br>
+	<div></div>
+	<br><hr><br>
+	<pre>
+		0.5초에 한번씩 한줄로 5개의 랜덤값이 출력된다.
+		규칙적인 시간간격으로 실행 : setInterval()
+	</pre>
+	<input id = "run" onclick="proc2(this)" type="button" value="실행">
+	<input onclick="proc3()" type="button" value="멈춤">
+	<br><br>
+	<br><br>
+	<div></div>
+	
+
+</body>
+</html>
