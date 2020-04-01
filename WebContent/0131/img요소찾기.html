@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/mystyle.css?after">
+	<style>
+		img{
+		width : 100px
+			height: 100px;;
+		}
+	</style>
+
+<script>
+	
+	function proc1(){
+		f = document.ff;
+
+		namevalue = f.name.value;
+		telvalue = f.tel.value
+
+		myimg1 = document.myimg[0].src
+		myimg2 = document.myimg[1].src
+
+		res = "이름 : " + namevalue + "<br>";
+		res += "전화번호 : " + telvalue + "<br>";
+		res += "이미지1 : " + myimg1 + "<br>";
+		res += "이미지2 : " + myimg2 
+		document.getElementById('result1').innerHTML = res;
+	}
+	function proc2(){
+
+	}
+	function proc3(){
+
+	}
+	function proc4(){
+
+	}
+	function proc5(){
+
+	}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h2>name을 이용한 html요소 찾기</h2>
+<pre>
+	- id로 접근- [0]인덱스가 항상 필요
+	document.getElementsBytagName('div')[0]
+	- name으로 접근- 같은 이름이 여러개 있을때만, 없을때는 안씀 
+	- 있을때는 [0], [1] 이런식으로 넣음
+	- input요소는 form요소를 거쳐서 찾기를 하고
+	- img요소는 form요소를 거치지않는다.
+	document.formname.inputname
+	document.imgname
+</pre>				
+
+	<img src="../images//눈내리는.gif" alt="커퍼1" name="myimg">
+
+	<form name ="ff">
+		<input type="text" name="name"><br>
+		<input type="text" name="tel"><br>
+		<img src="../images//눈내리는.gif"  alt="커퍼2" name="myimg">
+		<input type="button" onclick="proc1()" value="확인">
+	</form>
+
+	<!-- 		
+		<button onclick="proc1()" type="button">실행timeout</button>
+	 -->
+		<div id="result1" ></div>
+	
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

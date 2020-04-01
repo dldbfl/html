@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+
+<script>
+ $(function(){ 
+
+	$('#btn0').on('click', function(){
+		$("h1").add("p").add("span").css("background-color", "yellow");
+	})
+
+	$('#btn1').on('click', function(){
+		$("li.start").next().css({"color": "red", "border": "2px solid red"});
+	})
+	$('#btn2').on('click', function(){
+		$("li.start").nextAll().css({"color": "yellow", "border": "2px solid yellow"});
+	})
+	$('#btn3').on('click', function(){
+		$("li.start").nextUntil('.start').css({"color": "green", "border": "2px solid green"});
+	})
+
+
+
+	$('#btn4').on('click', function(){
+		$("span").parent().css({"color": "black", "border": "2px solid black"});
+	})
+	$('#btn5').on('click', function(){
+		$("span").parents().css({"color": "orange", "border": "2px solid orange"});
+	})
+	$('#btn6').on('click', function(){
+		$("span").parentsUntil('.start').css({"color": "gold", "border": "2px solid gold"});
+	})
+
+
+	$('#btn7').on('click', function(){
+		$("li.start").prev().css({"color": "plum", "border": "2px solid plum"})
+	})
+	$('#btn8').on('click', function(){
+		$("li.start").prevAll().css({"color": "pink", "border": "2px solid pink"})
+	})
+	$('#btn9').on('click', function(){
+		$("li.start").prevUntil('.start').css({"color": "blue", "border": "2px solid blue"})
+	})
+
+	$('#btn10').on('click', function(){
+		$("li.start").siblings().css({"color": "gray", "border": "2px solid gray"})
+	})
+	$('#btn11').on('click', function(){
+		$("li.start").siblings('li').css({"color": "lime", "border": "2px solid lime"})
+	})
+
+	$('#btn12').on('click', function(){
+		$("div").contents().filter("em").wrap("<b/>");
+	})
+	$('#btn13').on('click', function(){
+		$("ul").children().css({"color": "yellowgreen", "border": "2px solid yellowgreen"});
+	})
+	$('#btn14').on('click', function(){
+		$("ul").find("span").css({"color": "cyan", "border": "2px solid cyan"});
+	})
+ })
+</script>
+
+<style>
+ .siblings * { 
+  display: block;
+  border: 2px solid lightgrey;
+  color: lightgrey;
+  padding: 5px;
+  margin: 15px;
+}
+.ancestors * { 
+  /* display: block; */
+  border: 2px solid lightgrey;
+  color: lightgrey;
+  padding: 5px;
+  margin: 15px;
+}
+</style>
+</head>
+<body class="ancestors">
+
+<div class="box">
+ <h2> end() : 선택을 되돌리기 </h2>
+ <pre>
+
+ </pre>
+
+ <div><em>이거 특이해짐</em></div>
+ <ul>ul (parent)
+    <li><p>li (sibling)</p></li>
+    <li>li (sibling)</li>
+    <li class="start">li (sibling with class name "start")</li>
+    <li>li (the next sibling of li with class name "start")</li>
+    <li><span>li (sibling)</span></li>
+  </ul>    
+
+
+ 	 <div id="d1" style="width:500px;" class="siblings">
+			div (great-grandparent)
+		<ul>ul (grandparent)  
+			<li>li (direct parent)
+				<span>span</span>
+			</li>
+		</ul>   
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <button id="btn0" type="button">add()</button>
+
+ <button id="btn1" type="button">next()</button>
+ <button id="btn2" type="button">nextAll()</button>
+ <button id="btn3" type="button">nextUntil(selector)</button>
+
+ <button id="btn4" type="button">prev()</button>
+ <button id="btn5" type="button">preveAll()</button>
+ <button id="btn6" type="button">prevUntil(selector)</button>
+
+ <button id="btn7" type="button">parent()</button>
+ <button id="btn8" type="button">pratents()</button>
+ <button id="btn9" type="button">parentsUntil(selector)</button>
+
+ <button id="btn10" type="button">siblings()</button> 
+ <button id="btn11" type="button">siblings(selector)</button>
+
+ <button id="btn12" type="button">contents()</button>
+ <button id="btn13" type="button">children()</button>
+ <button id="btn14" type="button">find()</button>
+
+ 
+	   </div>
+	   
+</body>
+</html>

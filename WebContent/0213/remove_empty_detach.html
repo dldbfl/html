@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+ $(function(){
+
+$('#emp1').on('click', function(){
+   $('#dd').empty();
+})
+
+$('#re1').on('click', function(){
+	$('#dd').remove();
+})
+
+$('.pp').on('click', function(){
+	$(this).css('font-size', '+=2px');
+})
+
+
+$('#re2').on('click', function(){
+	$('#result2').append($('#p1').remove());
+})
+$('#de2').on('click', function(){
+	$('#p2').detach().appendTo('#result2');
+	
+})
+
+$('#cl').on('click',function(){
+	$('#cp3').clone().prependTo('#result3');
+})
+$('#clt').on('click',function(){	
+	$('#result3').prepend($('#cp4').clone(true));
+})
+})
+</script>
+
+<style>
+#dd{
+  background : yellow;
+}
+</style>
+
+</head>
+<body>
+
+	<div class="box">
+		<h2>비우기와 지우기 </h2>
+		<pre>
+empty() : 대상요소는 식제하지 않고 자식들만 지운다 
+remove () : 대상요소뿐만 아니라 자식요소까지 함께 지워진다	</pre>
+		 <div id = "dd">
+		   마음이 살짝 기운다.
+		   무릎을 베고 누우면 나 아주 오래전 그랬던 것처럼
+		   머리칼을 쓰다듬고 싶다..
+		 </div>
+		 <button id="emp1" type="button">empty</button>
+		 <button id="re1" type="button">remove</button>
+		
+		<div id="result1"></div>
+	   </div>
+
+	<div class="box">
+		<h2> 삭제시 이벤트 확인  </h2>
+		<pre>
+remove()  : 요소 삭제시 이벤트 핸들러도 삭제
+detache() : 요소 삭제시 이벤트 핸들러는 삭제되지 않는다	</pre>
+		
+		<p class="pp" id="p1">눈은 참 아름다운데</p>
+		<p class="pp" id="p2">가까이 보니 추워서</p>
+		<p class="pp" id="p3">멀리서 보면 괜찮을 줄 알았는데 더 춥다.</p>
+		<p class="pp" id="p4">아직 멀었다면 나랑 따뜻한 곳으로 떠나요</p>
+		<button id="re2" type="button">remove</button>
+		<button id="de2" type="button">detach</button>
+		<div id="result2"></div>
+	   </div>
+
+	   <div class="box">
+		<h2> 복사시 이벤트 확인  </h2>
+		<pre>
+clone()  : 요소를 복사할때 이벤트는 복사되지 않는다
+clone(true) : 요소를 복사할때  이벤트 핸들러도 함께 복사된다</pre>
+		
+		<p class="pp" id="cp1">눈은 참 아름다운데</p>
+		<p class="pp" id="cp2">가까이 보니 추워서</p>
+		<p class="pp" id="cp3">멀리서 보면 괜찮을 줄 알았는데 더 춥다.</p>
+		<p class="pp" id="cp4">아직 멀었다면 나랑 따뜻한 곳으로 떠나요</p>
+		<button id="cl" type="button">remove</button>
+		<button id="clt" type="button">detach</button>
+		<div id="result3"></div>
+	   </div>
+
+
+
+</body>
+</html>

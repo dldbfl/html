@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+	$(function(){
+		
+		/* //$('.btn').bind('click', function(){})
+		//$(실행자).on(이벤트, function)
+		$('.btn').on('click', function(){
+			$('<button>', {
+				'class' : 'btn',
+				'type' : 'button',
+				'text' : '새로운 버튼'
+			}).appendTo('#result1');
+		}) */
+		
+		//$(부모).on(실행자, 이벤트, function)
+		//$('.dd').delegate('.btn', 'click', function(){})
+		$('.dd').on('click', '.btn', function(){
+			$('<button>', {
+				'class' : 'btn',
+				'type' : 'button',
+				'text' : "새로운 버튼"
+		}).appendTo('#result1');
+	})
+})
+</script>
+</head>
+
+<body>
+<div class="box">		
+	<h2>delegate</h2>
+	<pre>
+	</pre>
+	
+	<div id="d1" class="dd">
+		<button class="btn" type="button">버튼1</button>
+		<button class="btn" type="button">버튼2</button>
+		<button class="btn" type="button">버튼3</button>
+	</div>
+	
+	<button type="button">해제</button>
+	<div id="result1" class="dd"></div>
+</div>
+</body>
+</html>

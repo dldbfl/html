@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link type="text/css" rel="stylesheet" href="../css/mystyle.css">
+
+<script src="../js/form_valid.js"></script>
+
+<script>
+  //proc1();
+</script>
+
+<style>
+ span{
+   font-size : 1.5em;
+   color : red;
+ }
+</style>
+</head>
+<body>
+
+<div class="box">
+ <h2>유효성 검증 </h2>
+ <pre>
+     공백검증  : namevalue.trim().length == 0 를 비교
+    길이 검증  : 아이디 는 8자~12자 사이로 입력 
+                      이름은 2자이상~5글자사이로 입력
+ </pre>
+ 
+ <div id="result1">
+   <form name="ff">
+         이름  <input type="text" name="name"><br>
+         아이디  <input type="text" name="id"><br>
+     <button onclick="proc1()" type="button">실행</button>
+   </form>
+ </div>
+ 
+ <div id="result2"></div>
+  
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+

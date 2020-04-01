@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+$(function(){
+			//bind 형식 : 기존에 만들어져있는 요소에만 이벤트 적용됨
+			//$('.add').click(function(){})
+			//$('.add').bind('click', function(){})
+			//$('.add').on('click', function(){})
+			
+			//delegate 형식 : 새롭게 만들어지는 요소(class=add)에도 이벤트 적용됨
+			//$('#result1').delegate('.add', 'click', function(){})
+			cnt = 0;
+			$('#result1').on('click', '.add', function(){
+				
+				cnt++;
+				//새로운 태그 만들기
+				file = '<p id="' + cnt + '">';
+				file += '파일 : <input type="file">';
+				//방법1
+				file += '<button type="button" class="add">추가</button>';
+				file += '<button type="button" class="del ' + cnt + '">삭제</button>';				
+				/* 
+				//방법2
+				$('<buntton/>', {
+					'type' : 'button',
+					'class' : 'add',
+					'text' : "추가"
+				}) */
+				
+				file += '<br></p>';
+				
+				$('#result1').append(file);
+				
+			})
+			
+			
+			$('#result1').on('click', '.del', function(){
+				
+				//this = del
+				vclass = $(this).attr('class');
+				vc = vclass.split(' '); //vc[0] = del vc[1] = 2
+				$('#' + vc[1]).remove();
+				
+				
+			})
+			
+		})
+</script>
+</head>
+
+<body>
+<div class="box">		
+<h2>파일추가</h2>
+<pre>
+</pre>
+
+<div id="result1">
+	이름 : <input type="text"><br>
+	파일 : <input type="file">
+	<button type="button" class="add">추가</button>
+	<br>
+</div>
+
+</div>
+</body>
+</html>

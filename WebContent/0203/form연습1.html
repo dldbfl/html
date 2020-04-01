@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/mystyle.css?after">
+	<style>
+
+	</style>
+
+<script>
+	
+	function proc1(){
+		f = document.ff;
+
+		danvalue = f.dan.value;
+
+		res = "";
+		for(i=1;i<10;i++){
+			res += danvalue + " * " + i + " = " + danvalue*i + "\n";
+		}
+		f.area.value = res;
+	}
+	function proc2(){
+		df2 = document.ff2;
+		//입력하거나 선택한 값을 가져온다. - value
+		namevalue = df2.name.value;
+		gendvalue = df2.gender.value;
+
+		hovalue ="";
+		for(i=0; i<df2.hobby.length; i++){
+			//체크 상태값을 얻는다
+			if(df2.hobby[i].checked){
+				hovalue += df2.hobby[i].value + ",";
+			}
+		}
+		res = "이름 : "+ namevalue+"\n";
+		res += "성별 : "+ gendvalue+"\n";
+		res += "취미는 : "+ hovalue+"입니다";
+
+		df2.area.value = res;
+		df2.area.style.fonsize = "1.5em";
+	}
+	function proc3(){
+
+	}
+	function proc4(){
+
+	}
+	function proc5(){
+
+	}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h2>폼객체</h2>
+<pre>
+	name을 이용한 접근
+	f = document.ff;
+	
+	입력 텍스트에서 값 가져오기 value
+	danvalue = f.dan.value;
+
+	textarea에서 출력하기 value
+	f.area.value = res;
+</pre>
+
+<form name="ff" action="">
+		<input name ="dan" type="text" size="3"> dan
+		<button onclick="proc1()" type="button">실행</button>
+		<div id="result1" >
+		<textarea name="area" rows="10" cols="30"></textarea>
+		</div>
+	</div>
+</form>
+
+
+
+<div class="box">
+	<h2>정보출력</h2>
+<pre>
+	
+
+	for(i=0; i%lt;df2.hobby.length; i++){
+		//체크상태값을 얻는다.
+		if(df2.hobby[i].checked){
+			hovalue += df2.hobby[i].value + ",";
+		}
+	}
+
+</pre>
+
+<form name="ff2" action="">
+	이름: 
+	<input name ="name" type="text" size="20"> <br>
+
+	성별:
+	<input value ="남" name="gender"type="radio" checked>남
+	<input value ="여" name="gender"type="radio">여 <br>
+
+	취미:
+	<input value="여행" name="hobby" type="checkbox" checked>여행
+	<input value="독서"  name="hobby" type="checkbox" >독서
+	<input value="영화감상"  name="hobby" type="checkbox" >영화감상
+	<input value="바둑"  name="hobby" type="checkbox" checked>바둑
+	<input value="장기"  name="hobby" type="checkbox" >장기
+	<iput value="등산"  name="hobby" type="checkbox" checked><br>
+	
+	<button onclick="proc2()" type="button">실행</button>
+	<div id="result2" >
+	<textarea name="area" rows="10" cols="30"></textarea>
+
+
+	</div>
+</div>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

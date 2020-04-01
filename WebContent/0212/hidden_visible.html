@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+$(function(){
+	$('#btn1').on('click',function(){
+		str = $('p:hidden').text();
+		$('#result1').html(str);
+		
+	})
+
+	$('#btn2').on('click',function(){
+		str = $('p:visible').text();
+		$('#result2').html(str);
+	})
+
+})
+</script>
+<style>
+	table{
+		width: 300px;
+		text-align: center;
+	}
+</style>
+
+</head>
+<body>
+
+	<div class="box">
+		<h2></h2>
+		<pre>
+:visible
+:hidden
+</pre>	
+		<div>
+			<p> 보이는 문단</p>
+			<p style="visibility:hidden;"> 숨겨진 문단</p>
+			<p style="display:none;"> 자리를 차지 하지 못한 문단 </p>
+			<p style="opacity:0;"> 투명한 문단</p>
+			<hr/>
+			<script > </script>
+
+			<button id="btn1" onclick="proc1()" type="button">hidden</button>
+			<button id="btn2" onclick="proc1()" type="button">visible</button>
+			<div id="result1">hidden</div>
+			<div id="result2">visible</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

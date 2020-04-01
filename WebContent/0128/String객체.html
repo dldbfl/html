@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script>
+  str = "우리나라 대한민국 행복하기를";
+  str1 ="I Love ........";
+  
+  function proc1(){
+	  chat =  str.charAt(2);
+	  codeat =  str.charCodeAt(2);
+	  
+	  cat =  str1.charCodeAt(5);
+	  
+	  res = "str.charAt(2) :" + chat + "<br>";
+	  res += "str.charCodeAt(2) :" + codeat + "<br>";
+	  res += "str1.charCodeAt(5) :"  + cat + "<br>";
+	  
+	  document.getElementById('result1').innerHTML = res;
+	  
+  }
+
+  function proc2(){
+
+	ss =  str.concat(str1);
+	  
+	  res = "str.length : " + str.length + "<br>" 
+	  res += "str1.length : " + str1.length + "<br>"
+	  res += "ss.length : " + ss.length + "<br>"
+	  document.getElementById('result2').innerHTML = res;
+	  document.getElementById('result2').innerHTML += ss;
+  }
+</script>
+</head>
+<body>
+
+<div class="box">
+ <h2>String객체 </h2>
+ <pre>
+  str = "우리나라 대한민국 잘살수있을까";
+  str1 ="I Love 는 너무 직설적이니 은유적인 표현으로 합시다.";  
+  ss = str.concat(str1);
+  
+
+    문자열의 charCodeAt(인덱스)
+  str.charCodeAt(2);
+  
+  str1.charCodeAt(5);
+  
+ </pre>
+ <button onclick="proc1()" type="button">실행</button>
+ <div id="result1"></div>
+ 
+</div>
+
+
+<div class="box">
+	<h2>String객체 </h2>
+<pre>
+ss =  str.concat(str1);
+
+res = "str.length : " + str.length 
+res += "str1.length : " + str1.length 
+res += "ss.length : " + ss.length 
+document.getElementById('result2').innerHTML = res;	 
+</pre>
+	<button onclick="proc2()" type="button">실행</button>
+	<div id="result2"></div>
+	
+   </div>
+</body>
+</html>
+
+
+
+
+
+
+

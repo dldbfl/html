@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/mystyle.css?after">
+	<style>
+	#b5{
+		display: none;
+	}
+	</style>
+
+<script>
+	
+	function proc1(){
+		//0.5초가 경과하면 result1의 배경색을 변경	
+		setTimeout(function(){
+			document.getElementById('result1').style.background = "cyan"
+			// document.ff.result1.style.background = "cyan"
+		},500)
+	}
+	function proc2(but){
+
+		but.style.display = "none";
+
+		x = setInterval(function(){
+		//1초가 경과할 때마다 result2의 배경색을 변경
+		console.log(x)
+		cr = Math.floor(Math.random()*256);
+		cg = Math.floor(Math.random()*256);
+		cb = Math.floor(Math.random()*256);
+
+		cr = cr.toString(16);
+		cg = cg.toString(16);
+		cb = cb.toString(16);
+
+		   document.getElementById('result2').style.background = "#"+cr+cg+cb;
+		// document.getElementById('result2').style.background = "rgb("+cr+","+cg+","+cb+")";
+		},1000)
+	}
+	function proc3(){
+
+		document.getElementById('b2').style.display = "inline";
+		clearInterval(x);
+	}
+
+	function proc4(but){
+
+		but.style.display = "none";
+		document.getElementById('b5').style.display = "inline"
+
+		result = document.getElementById('result4');
+
+		x = setInterval(function(){
+		
+		result.style.background = 
+		result.style.background == 'olive' ? 'plum' : 'olive';
+
+			// if(result.style.background == 'olive'){
+			// 	result.style.background = 'plum'
+			// }else{
+			// 	result.style.background = 'olive'
+			// }
+		},1000)
+	}
+	function proc5(){
+
+		document.getElementById('b4').style.display = "inline";
+		document.getElementById('b5').style.display = "none"
+		clearInterval(x);
+	}
+</script>
+</head>
+<body>
+	<form name="ff">
+	<div class="box">
+		<h2>setTimeout/setInterval</h2>
+<pre>
+	setTimeout(fn, millisec)
+	setInterval(fn, millisec)
+</pre>				
+		<button onclick="proc1()" type="button">실행timeout</button>
+		<button id="b2" onclick="proc2(this)" type="button">실행interval</button>
+		<button onclick="proc3()" type="button">정지interval</button>
+		
+		<div id="result1" ></div>
+		<div id="result2"></div>
+	
+	</div>
+</form>
+
+<div class="box">
+		<h2>setTimeout/setInterval</h2>
+<pre>
+	1초마다 녹색, 노랑색으로 배경색 변경
+	setInterval(fn, millisec)
+</pre>				
+	<button id="b4" onclick="proc4(this)" type="button">실행interval</button>
+	
+	<button id="b5" onclick="proc5()" type="button">정지interval</button>
+	<div id="result4"></div>
+	
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

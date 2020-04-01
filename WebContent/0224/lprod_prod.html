@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	
+	<script>
+		$(function(){
+			
+			$('#btn1').on('click', function(){
+				$.ajax({
+					url : '/jqpro/LprodList',
+					
+					success : function(res){
+						code = "";
+						$.each(res, function(i){
+							code += "<option value='" + res[i].gu + "'>" + res[i].nm + "</option>";
+						})
+						$('#lprod').html(code);
+						$('#lprod').trigger('click');
+					},
+					
+					error : function(xhr){
+						alert("상태 : " + xhr.status);
+					},
+					
+					dataType : 'json'
+				})	
+			})
+			
+			$('#lprod').on('change', function(){
+				lprod_gu = $('option:selected', this).val();
+				
+				$.ajax({
+					url : '/jqpro/p.do',
+					
+					type : 'get',
+					
+					//'lprod_gu' : controller에서 getParameter에 썼던 이름
+					data : {'lprod_gu' : lprod_gu},
+					
+					success : function(res){
+						if(res.sw == "ok"){
+							code = "";
+							
+							$.each(res.data, function(i){
+								code += "<option value='" + res.data[i].gu + "'>" + res.data[i].nm + "</option>";
+							})
+						$('#prod').html(code);
+						$('#prod').trigger('change');
+							
+						}else if(res.sw == "no"){
+							code = "<option value=0>데이터없음</option>"
+								//$('#result2').remove();
+								$('#result2').empty();
+						}
+						$('#prod').html(code);
+						
+						/* code = "";
+						
+						$.each(res, function(i){
+							code += "<option value='" + res[i].id + "'>" + res[i].name + "</option>";
+						})
+						
+						$('#prod').html(code); */
+					},
+					
+					error : function(xhr){
+						alert("상태 : " + xhr.status);
+					},
+					
+					dataType : 'json'
+				})
+				
+				 $('#prod').on('change', function(){
+    	
+    			 //alert($('option:selected', this).val());
+    					prod_id = $('option:selected', this).val();
+    					if(prod_id == null) return false;
+    					
+    					$.ajax({
+    						url : '/jqpro/p.do',
+    						type	: 'post',
+    						data : {'prod_id' : prod_id},
+    						//data :  "prod_id=" + prod_id,
+    						success : function(res){
+    							
+    							code = code = "<table class='table table-hover'>";  	   								
+								code +="<tr><td>gu</td><td>" + res.gu          + "</td></tr>"; 
+								code +="<tr><td>nm</td><td>" + res.nm          + "</td></tr>"; 
+								code +="<tr><td>lgu</td><td>" + res.lgu         + "</td></tr>"; 
+								code +="<tr><td>price</td><td>" + res.price       + "</td></tr>"; 
+								code +="<tr><td>color</td><td>" + res.color       + "</td></tr>"; 
+								code +="<tr><td>cost</td><td>" + res.cost        + "</td></tr>"; 
+								code +="<tr><td>detail</td><td>" + res.detail      + "</td></tr>"; 
+								code +="<tr><td>outline</td><td>" + res.outline     + "</td></tr>"; 
+								code +="<tr><td>properstock</td><td>" + res.properstock + "</td></tr>"; 
+								code +="<tr><td>qtyin</td><td>" + res.qtyin       + "</td></tr>"; 
+								code +="<tr><td>qtysale</td><td>" + res.qtysale     + "</td></tr>"; 
+								code +="<tr><td>sale</td><td>" + res.sale        + "</td></tr>"; 
+								code +="<tr><td>size</td><td>" + res.size        + "</td></tr>"; 
+								code +="<tr><td>totalstock</td><td>" + res.totalstock  + "</td></tr>"; 
+								code +="<tr><td>unit</td><td>" + res.unit        + "</td></tr>"; 
+    							
+								code += "</table>";
+								
+								$('#result2').html(code);			
+								
+								
+    						},
+    						error : function(xhr){
+    							alert("상태 : " + xhr.status);
+    						},
+    						dataType : 'json'
+    				})
+   			 })
+				
+				
+			})
+			
+		})
+	</script>
+</head>
+
+<body>
+	<div class="box꽃">		
+		<h2></h2>
+		<pre>
+		</pre>
+		<button id="btn1" type="button">실행</button>
+		<!-- <div id="result1">
+			<select id="lprod">	
+			</select>
+			
+			<select id="prod">
+			</select>
+		</div> -->
+		<div class="container">
+		  <h2>제품 분류에 따른 상품 목록 및 상세정보</h2>
+		  <form>
+		    <div class="form-group">
+		      <label for="lprod">제품 분류 리스트</label>
+		      <select class="form-control" id="lprod"></select>
+		      <br>
+		      
+		      <label for="prod">상품 리스트</label>
+		      <select class="form-control" id="prod">
+		      </select>
+		    </div>
+		  </form>
+		</div>
+
+		<div id="result2"></div>
+	</div>
+</body>
+</html>

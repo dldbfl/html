@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+ $(function(){ 
+	$('#btn1').on('click', function(){
+		
+		setInterval(function(){
+			// $('img:first').appendTo("#result1");
+			$('#result1').append("img:first");
+		},500);
+		
+	})	
+	
+	$('p').on('click', function(){
+		vtit =  $(this).attr('title');
+		vtxt =  $(this).text();
+		
+		//이미지 생성 
+		$('<img>', {
+			 'src' : '../images/' + vtit + ".jpg",
+			 'width' : '100px',
+			 'height' : '100px'
+		})./*appendTo(this);*/insertAfter(this); 
+		
+		
+	})
+ })
+</script>
+<style>
+	table{
+		width: 300px;
+		text-align: center;
+	}
+	img{
+		width: 100px;
+	}
+</style>
+
+</head>
+<body>
+
+	<div class="box">
+		<h2>기타필터</h2>
+		<pre>
+img:first	
+append()/ appendTo()
+
+추가시 기존의 요소를 추가하면 기존의 요소를 이동한다.
+
+$('img:first').appendTo('#result1')
+$('#result1').appendo(''img:first')
+
+</pre>	
+		<div>
+				<button id="btn1" type="button">hidden</button>
+				
+				<div id="result1">
+					<img src="../images/1570823554 (4).gif">
+					
+					<img src="../images/1570823554 (5).gif">
+					
+					<img src="../images/1570823554.gif">
+					
+					<img src="../images/1570823556 (1).gif">
+					
+					<img src="../images/1570823556 (2).gif">
+
+
+				</div>
+				<div id="result2"></div>
+		</div>
+	</div>
+
+
+	<div class="box">
+		<h2>이미지 추가</h2>
+		<pre>
+p태그의 text를 클릭하면 그 text에 맞는 이미지를 추가한다.
+</pre>	
+		<div>
+				<div id="result1">
+					<p title="셔틀콕">어가2</p>
+					<p title="Tulips">튜울립</p>
+					<p title="Hydrangeas">수국</p>
+					<p title="Chrysanthemum">국화</p>
+					<p title="Penguins">펭귄</p>
+				</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

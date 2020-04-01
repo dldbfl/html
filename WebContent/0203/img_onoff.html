@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/mystyle.css?after">
+	<style>
+
+	</style>
+
+<script>
+	
+	function proc1(){
+		vsrc = document.onoff;
+
+		// alert(vsrc.src);
+
+		setInterval(function(){
+		if(vsrc.src.match("switch1_off")){
+			vsrc.src = "../images/switch1_on.png"
+		}else{
+			vsrc.src = "../images/switch1_off.png"
+		}
+
+		},200)
+	}
+	function proc2(){
+
+	}
+	function proc3(){
+
+	}
+	function proc4(){
+
+	}
+	function proc5(){
+
+	}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h2>일부분의 문자열 비교</h2>
+<pre>
+	match(/정규식/)
+	match("일반문자")
+	전체 문자열 중 일부분 일치하는 문자가 있는지 판별
+	일치하는 문자가 있으면 해당문자들을 리턴/ 없으면 null 리턴
+
+	이름이 onoff인 이미지요소에 접근, src의 속성값을 얻고
+	거기서 switch1_off라는 문자와 일치하는 문자가 있느냐?
+	
+	vsrc = document.onoff;
+
+		// alert(vsrc.src);
+
+		setInterval(function(){
+		if(vsrc.src.match("switch1_off")){
+			vsrc.src = "../images/switch1_on.png"
+		}else{
+			vsrc.src = "../images/switch1_off.png"
+		}
+
+		},100)
+</pre>				
+	<img name="onoff" onclick="proc1()" src="../images/switch1_off.png" alt="">	
+
+	</div>
+
+	
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

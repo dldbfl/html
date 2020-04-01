@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+$(function(){
+			$('img').hover(function(){
+				$(this).addClass('img_color');
+			},function(){
+				$(this).removeClass('img_color');
+			})
+			
+			$('.guess_box').on('click',function(){
+				ran = Math.floor(Math.random()*5+6);
+				pTag = '<p>할인율 : '+ran+'%</p>';
+				$(this).append(pTag);
+
+				if(!this){
+					$('p',this).remove();
+				}
+
+				$(this).off('click');
+
+			})
+
+			
+		})
+</script>
+<style>
+	.guess_box{
+		display: inline-block; /*inline-'block'으로 해야 div크기가 이미지에 맞춰져요 감사합니다.*/
+	
+	}
+	.img_color{
+		border : 3px solid red;
+	}
+</style>
+</head>
+
+<body>
+	<div class="box">		
+		<h2></h2>
+		<pre>
+		</pre>
+		
+		<div id="header">
+		   <h2> Jump for Joy Sale </h2>
+		</div>
+		<div id="main">
+		   <div class="guess_box"><img src="../images/1570823554 (2).gif" /></div>
+		   <div class="guess_box"><img src="../images/대나무숲.jpg" /></div>
+		   <div class="guess_box"><img src="../images/단풍.jpg" /></div>
+		   <div class="guess_box"><img src="../images/셔틀콕.jpg" /></div>
+		</div>
+
+	</div>
+</body>
+</html>

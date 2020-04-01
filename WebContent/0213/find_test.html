@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+
+<script>
+	$(function(){
+		
+		$('#content').on('click', function(){
+			$('#d1').contents('ul')
+					.css('border', '1px solid red');
+		})
+		
+		$('#children').on('click', function(){
+			$('#d1').children('ul')
+				   .css('border', '1px solid blue'); 
+		})
+		
+		$('#find').on('click', function(){
+			$('#d1').find('span')
+				 .css('border', '1px solid green');
+		})
+		
+	})
+   </script>
+   
+   <style>
+	.siblings * { 
+	   display: block;
+	   border: 2px solid lightgrey;
+	   color: grey;
+	   padding: 5px;
+	   margin: 15px;
+   }
+   </style>
+   
+   </head>
+   <body>
+   
+   <div class="box">
+	<h2>자식/후손 검색 </h2>
+	<pre>
+	  .contents() : 자식을 검색, 후손은 검색 안됨
+	  .children() : 자식을 검색, 후손은 검색 안됨
+	  .find()     : 자식과 후손을 검색 
+	  
+	  $('#d1').contents('ul')
+	  $('#d1').children('ul')
+	  
+	  $('#d1').find('ul')  $('#d1').find('span')
+	</pre>
+	
+	<div id="d1" style="width:500px;" class="siblings">
+		   div (great-grandparent)
+	  <ul>ul (grandparent)  
+		 <li>li (direct parent)
+		   <span>span</span>
+		 </li>
+	   </ul>   
+	 </div>
+	 
+	<button id="content" type="button">content</button>
+	<button id="children" type="button">children</button>
+	<button id="find" type="button">find</button>
+	
+   </div>
+
+
+ <button id="btn0" type="button">add()</button>
+
+ <button id="btn1" type="button">next()</button>
+ <button id="btn2" type="button">nextAll()</button>
+ <button id="btn3" type="button">nextUntil(selector)</button>
+
+ <button id="btn4" type="button">prev()</button>
+ <button id="btn5" type="button">preveAll()</button>
+ <button id="btn6" type="button">prevUntil(selector)</button>
+
+ <button id="btn7" type="button">parent()</button>
+ <button id="btn8" type="button">pratents()</button>
+ <button id="btn9" type="button">parentsUntil(selector)</button>
+
+ <button id="btn10" type="button">siblings()</button> 
+ <button id="btn11" type="button">siblings(selector)</button>
+
+ <button id="btn12" type="button">contents()</button>
+ <button id="btn13" type="button">children()</button>
+ <button id="btn14" type="button">find()</button>
+
+ 
+	   </div>
+	   
+</body>
+</html>

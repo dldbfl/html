@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에서 작성한 SQL을 호출할 때 같이 사용된다. -->			
+<sqlMap namespace="member">
+
+	 <!-- select 연습 -->
+	 <select id="checkById" resultClass="string" parameterClass="string">
+	 		select mem_id from member where mem_id=#data#
+	 </select>
+	 <!-- public List<ZipVO> selectByDong(String dong) -->
+	 <!--1.우편번호검색  -->
+	 		<select id="selectByDong" resultClass="zipVO" parameterClass="string">
+	 			select * from ziptb where dong like #date#||'%'
+	 		</select>
+	<!--2. 저장 제출하기  -->
+			<insert id="insertMember" parameterClass="memVO">
+				insert into member( MEM_ID, MEM_PASS, MEM_NAME, MEM_BIR, MEM_ZIP, MEM_ADD1, MEM_ADD2, MEM_HP, MEM_MAIL) 
+				values(	#mem_id#, #mem_pass#, #mem_name#, #mem_bir#,#mem_zip#,#mem_add1#	,#mem_add2#,#mem_hp#,#mem_mail#)
+				<selectKey keyProperty="mem_id" resultClass="String">
+				SELECT mem_id FROM member where mem_id =#mem_id#
+				<!-- 여기서 mem_id는 패러미터로 받은 memBO의 값  -->
+				</selectKey>
+			</insert>
+	
+</sqlMap>			
+
+
+
+
+

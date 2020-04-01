@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+$(function(){
+			
+			$('#btn1').on('click', function(){
+				$(this).hide();
+				$('img').css('border', 'none');
+				
+				inter = setInterval(function(){
+					$('img:first').appendTo('#result1');
+					
+					//아래는 뻘짓...
+/* 					imgFirst = $('img:first').attr('src');
+					$('img:first').remove();
+					$('#result1').append('<img src="' + imgFirst + '">'); */
+				}, 500);
+			})
+			
+			$('#btn2').on('click', function(){
+				clearInterval(inter);
+				
+				//img 요소 모두 가져오기
+				ran = Math.floor(Math.random()*$('img').length);
+				
+				$('img:eq(' + ran + ')').css('border', '5px double red');
+				$('#btn1').show();
+			})
+			
+			
+			
+		})
+</script>
+
+<style>
+	
+	img {
+			width : 100px;
+			height : 100px;
+			border-radius : 100%;
+		}
+</style>
+</head>
+
+<body>
+	<div class="box">		
+		<h2></h2>
+		<pre>
+		</pre>
+		
+		<div id="header">
+		   <h2> 진행중인 이벤트 </h2>
+		   <h4>100% 당첨</h4>
+		</div>
+		<div id="result1">
+		   <img src="../images/티모.gif" />
+		   <img src="../images/대나무숲.jpg" />
+		   <img src="../images/산.png" />
+		   <img src="../images/셔틀콕.jpg" />
+		</div>
+		<button id="btn1">시작</button>
+		<button id="btn2">종료</button>
+
+	</div>
+</body>
+</html>

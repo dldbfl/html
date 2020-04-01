@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+
+$(function(){
+	
+	$('#get').on('click', function(){
+
+		nm = $('#name').val();
+		age = $('#age').val();
+		data = "name=" + nm + "&age=" + age;
+
+		$.get(
+			'../0219/formtest.jsp',
+			{ "name" : nm, "age" : age },
+			function(res){ $('#result1').html(res); },
+			'text'
+			);
+	})
+
+	
+	$('#post').on('click', function(){
+		
+		nm = $('#name').val();
+		age = $('#age').val();
+		data = "name=" + nm + "&age=" + age;
+		
+		$.post(
+			'../0219/formtest.jsp',
+			{ "name" : nm, "age" : age },
+			function(res){ $('#result1').html(res); },
+			'text'
+		);
+	})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/* $('#get').on('click', function(){
+		
+		nm = $('#name').val();
+		age = $('#age').val();
+		data = "name=" + nm + "&age=" + age;
+		
+		$.ajax({
+			///////////요청
+			url : '../0219/formtest.jsp',
+			
+			type : 'get', //get일때는 type 생략가능
+			
+			//data : 'data',
+			//json 형태로 data 전송
+			data : { "name" : nm, "age" : age },
+			
+			///////////응답
+			success : function(res){
+				$('#result1').html(res);
+			},
+			
+			eroor : function(xhr){
+				
+			},
+			
+			dataType : 'text'
+		})	
+	})
+	
+	
+	$('#post').on('click', function(){
+		
+		nm = $('#name').val();
+		age = $('#age').val();
+		data = "name=" + nm + "&age=" + age;
+		
+		$.ajax({
+			///////////요청
+			url : '../0219/formtest.jsp',
+			
+			type : 'post', //get일때는 type 생략가능
+			
+			//data : 'data',
+			//json 형태로 data 전송
+			data : { "name" : nm, "age" : age },
+			
+			///////////응답
+			success : function(res){
+				$('#result1').html(res);
+			},
+			
+			eroor : function(xhr){
+				
+			},
+			
+			dataType : 'text'
+		})	
+	}) */
+	
+})
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h2> </h2>
+	<pre>
+
+	</pre>
+	
+	<form id="ff">
+		이름 : <input name="name" id="name"/><br/>
+		나이 : <input name="age" id="age"/><br/>
+		<br/>
+		<button id="get" type="button">비동기실행get</button>
+		<button id="post" type="button">비동기실행post</button>
+	</form>
+	<div id="result1"></div>
+	<br/><hr/>
+	
+</div>
+</body>
+</html>

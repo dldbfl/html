@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/mystyle.css?after">
+	<style>
+		
+	</style>
+
+<script>
+	
+	function proc1(){
+		
+		lilist = document.getElementsByTagName("li")
+		res="";
+		for(i = 0; i<lilist.length; i++){
+			res+=lilist[i].firstChild.data + "<br>"
+		}	
+		document.getElementById("result1").innerHTML = res;	
+	}
+	function proc2(text){
+
+		txtnode = document.createTextNode(text);
+		// document.getElementById('result2').appendChild(txtnode);
+
+		// p 태그 생성 - p태그에 text를 추가
+		ptag = document.createElement('p');
+		ptag.appendChild(txtnode);
+		// p 태그를 div에 추가
+		document.getElementById('result2').appendChild(ptag);
+	}
+	function proc3(){
+	ultag = document.getElementsByTagName("ul")[1];
+	lilist = ultag.getElementsByTagName("li");
+	
+	for(i=0;i<lilist.length;i++){
+		//문자가져오기
+		vtxt = lilist[i].firstChild.data ;
+		
+
+		//img태그 생성
+		imgtag = document.createElement('img');
+
+		//img의 src, width, height 설정
+		imgtag.src="../images/" + vtxt + ".gif";
+		imgtag.width = 100;
+		imgtag.height = 100;
+		
+		//lilist에 img태그를 추가하기
+		lilist[i].appendChild(imgtag);
+		
+	}
+	}
+	function proc4(a){
+		//문자가져오기
+		vtxt = a.firstChild.data;
+		//img태그 생성
+		imgtag = document.createElement('img');
+
+		//img의 src, width, height 설정
+		imgtag.src="../images/" + vtxt + ".gif";
+		imgtag.width = 100;
+		imgtag.height = 100;
+
+		a.appendChild(imgtag);
+
+
+	}
+	function proc5(){
+
+	}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h2>dom 순회</h2>
+<pre>
+	각 li 요소들의 첫번쨰 child 를 검색
+	firstChild - object text가 뜸
+	data - object text의 데이터가뜸
+</pre>				
+	<ul>
+		<li>누리</li>
+		<li>한나</li>
+		<li>진영</li>
+		<li>현지</li>
+	</ul>
+
+		<button onclick="proc1()" type="button">실행timeout</button>
+	
+		<div id="result1" ></div>
+	
+	</div>
+
+
+	<div class="box">
+		<h2>dom 순회</h2>
+<pre>
+	새로운 요소 추가
+	createTextNode("문자열")
+	부모요소.appendChild('새로운 자식요소')
+</pre>				
+	
+
+		<button onclick="proc2('누구나 조금씩은 틀려. 완벽한 사람은 없어')" type="button">실행timeout</button>
+	
+		<div id="result2" ></div>
+	
+	</div>
+
+	<div class="box">
+		<h2>dom 순회</h2>
+<pre>
+	- li의 문자열을 검색, 가져오기
+	- img 요소 추가
+	imgtag = createTextNode("img")
+	imgtag.src = "~~.jpg"
+	- 이미지를 li요소에 추가
+	부모요소(li).appendChild('img요소')
+</pre>				
+	<ul>
+		<li>조커3</li>		
+	</ul>
+
+		<button onclick="proc3()" type="button">실행</button>
+	
+		<div id="result3" ></div>
+	
+	</div>
+
+
+	<div class="box">
+		<h2>dom 순회</h2>
+<pre>
+	- li의 문자열을 검색, 가져오기
+	- img 요소 추가
+	imgtag = createTextNode("img")
+	imgtag.src = "~~.jpg"
+	- 이미지를 li요소에 추가
+	부모요소(li).appendChild('img요소')
+</pre>				
+	<ul>
+		<li onclick="proc4(this)">조커3</li>		
+	</ul>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

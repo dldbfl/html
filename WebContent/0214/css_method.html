@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+
+<script>
+	$(function(){
+		$('.box1 p').on('click', function(){
+		 $(this).css('font-size', '+=2px');
+		
+		 //랜덤으로 배경색을 지정 
+		 r = Math.floor(Math.random()*255);
+		 g = Math.floor(Math.random()*255);
+		 b = Math.floor(Math.random()*255);
+		 
+		// $(this).css('backgroundColor', 
+				//'rgb(' + r + "," + g + "," + b+')')
+		
+		 r16=r.toString(16);
+		 g16=g.toString(16);
+		 b16=b.toString(16);
+		 $(this).css('background', '#' + r16 + g16 + b16);
+	      
+	 })
+	 
+	 	$('#btn1').on('click', function(){
+		res =  "font-size : " +  $('p').css('font-size') + "<br>";
+		
+		//현재의 배경색을 16진수로 출력 
+		res += "background : " + $('p').css('backgroundColor')+ "<br>";
+		res += "background : " + '#' + r16 + g16 + b16
+		
+		$('#result1').html(res);
+		})
+
+		$('#btn2').on('click',function(){
+			//$('.box2 p').css('background','yellow');
+			$('.box2 p').addClass('pbackcolor');
+		})
+		
+		$('#btn3').on('click',function(){
+			//$('.box2 p').css('background','white');
+			$('.box2 p').removeClass('pbackcolor');
+		})
+
+		
+		$('#btn4').on('click',function(){
+			//$('.box2 p').css('background','yellow');
+			
+			
+			if( $('.box2 p').hasClass('pbackcolor')){
+				$('.box2 p').removeClass('pbackcolor');
+			 }else{
+				$('.box2 p').addClass('pbackcolor');
+			 }
+			
+			
+			
+			
+			
+			//$('.box2 p').toggleClass('pbackcolor');
+		})
+
+	})
+   </script>
+   <style>
+	   p{
+		   font-size: 1.5em;
+	   }
+	   .pbackcolor{
+			background: yellow;
+		}
+
+	   
+   </style>
+   </head>
+   <body>
+   
+   <div class="box비">
+	<h2> 스타일 설정과 값 얻기 </h2>
+	<pre>
+
+	</pre>
+	<p>비가 아름답네</p>
+		
+	<button id="btn1" type="button">실행</button>
+	<div id="result1"></div>
+   </div>
+
+
+   <div class="box box2">
+ <h2>class를 이용한 스타일 설정 </h2>
+ <pre>
+  style에 class를 선언한다 
+ 
+   addClass(class이름)  : class이름을 추가한다
+   removeClass(class이름) :  class이름을 삭제한다
+   toggleClass(class이름) :class이름을 추가, 삭제를 번갈아한다
+   hasClass(class이름) : 해당 class이름이 있느냐? true/false를 리턴
+   
+ </pre>
+   <p>무궁화 꽃이 피었습니다</p>
+   
+ <button id="btn2" type="button">addclass</button>
+ <button id="btn3" type="button">removeclass</button>
+ <button id="btn4" type="button">toggleclass</button>
+ 
+</div>
+   </body>
+   </html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+		$(function(){
+			
+			//리퀘스트 객체 생성 (각 브라우저(크롬, 사파리 등)에서 생성하기 때문에 별도의 api는 필요하지 않다)
+			xhttr = new XMLHttpRequest();
+			
+			//ajax방식
+			//새로운 페이지로 응답하지 않고 현재 요청 페이지의 일부분에 실행 결과값만 업데이트된다.
+			$('#asyncPost').on('click', function(){
+				nmVal = $('#name2').val();
+				ageVal = $('#age2').val();
+				
+				//요청
+				data = "name=" + nmVal + "&age=" + ageVal;
+				
+				xhttr.open('post', 'formtest.jsp', true);
+				xhttr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+				
+				xhttr.send(data);
+				
+				//응답
+				xhttr.onreadystatechange = function(){
+					if(this.readyState == 4 && this.status == 200){
+						res = this.responseText;
+						$('#result2').html(res);
+						
+					}	
+				}
+				
+			})
+			
+			
+			$('#asyncGet').on('click', function(){
+				nmVal = $('#name2').val();
+				ageVal = $('#age2').val();
+				
+				//요청하기
+				//name=aaa&age=12 
+				//true : 비동기
+				xhttr.open('get', 'formtest.jsp?name=' + nmVal + '&age=' + ageVal, true);
+				
+				xhttr.send();
+				
+				//응답받기
+				xhttr.onreadystatechange = function(){
+					console.log(this.readyState);
+					if(this.readyState == 4 && this.status == 200){ //진행이 완료된 경우
+						res = this.responseText;
+					
+						$('#result2').html(res);
+					}
+				}
+			})
+			
+			//ajax방식이 아닌 기존 방식
+			//응답페이지가 새로운 페이지로 전체 로드된다.
+			$('#syncGet').on('click', function(){
+				nmVal = $('#name').val();
+				ageVal = $('#age').val();
+				
+				//form에 속성주기
+				$('#ff').attr('action', 'formtest.jsp?name=' + nmVal + '&age=' + ageVal);
+				
+				$('#ff').attr('method', 'get');
+				$('#ff').submit();
+			})
+			
+			
+			$('#syncPost').on('click', function(){
+				//post는 따로 값을 가져오지 않아도 input 속성에서 값이 jsp로 간다
+				
+				//form에 속성주기
+				$('#ff').attr('action', 'formtest.jsp');
+				$('#ff').attr('method', 'post');
+				$('#ff').submit();				
+			})
+			
+			
+			
+		})
+	</script>
+</head>
+
+<body>
+	<div class="box">		
+		<h2>동기/비동기</h2>
+		<pre>
+동기(synchronous JavaScript and XML) : 요청과 응답이 1:1로 이루어진다.
+	-&gt; 응답페이지가 새로운 페이지로 전체 로드된다.
+비동기(Asynchronous JavaScript and XML) : 요청과 응답이 1:1로 이루어지지 않을 수 있다.
+	-&gt; 새로운 페이지로 응답하지 않고 현재 요청 페이지의 일부분에 실행 결과값만 업데이트된다.
+		</pre>
+		
+		<form id="ff">
+			<!-- type="text" 생략 -->
+			이름 : <input name="name" id="name"><br>
+			나이 : <input name="age" id="age">
+			<br><br>
+			<button id="syncGet" type="button">동기실행get</button>
+			<button id="syncPost" type="button">동기실행post</button>
+		</form>
+		
+		<div id="result1"></div>
+		<br><hr>
+		
+		<form id="ff2">
+			<!-- type="text" 생략 -->
+			이름 : <input name="name" id="name2"><br>
+			나이 : <input name="age" id="age2">
+			<br><br>
+			<button id="asyncGet" type="button">비동기실행get</button>
+			<button id="asyncPost" type="button">비동기실행post</button>
+		</form>
+		
+		<div id="result2"></div>
+	</div>
+</body>
+</html>

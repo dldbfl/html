@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+
+<script>
+
+$(function(){ 
+	 $('p').hover(function(){ 
+		 //$(this).css('background', 'lime');
+		 $(this).addClass('pcolor');
+	 }, function(){ 
+		 //$(this).css('background', 'white');
+		 $(this).removeClass('pcolor');
+	 })
+	 
+ })
+</script>
+<STYLE>
+	.pcolor {
+     background  : lime;
+ 	}
+	p{
+	   font-size : '1.5em';
+	}
+  </STYLE>
+  </head>
+  <body>
+  
+  <div class="box">
+   <h2>hover(fn1, fn2) </h2>
+   <pre>
+	 fn1 : mouseover
+	 fn2 : mouseout 
+   </pre>
+  
+   <div id="result1">
+	 <p>여유를이바자가갖자</p>
+	 <p>한니에예의르지키자</p>
+	 <p>진자짜예쁘키라이습니다</p>
+	 <p>눈이 참 아름답습니다</p>
+	 <p>달이 참 아름답습니다</p>
+   </div>
+   
+  </div>
+  </body>
+   </html>

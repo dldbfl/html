@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/mystyle.css?after">
+	<style>
+
+	</style>
+
+<script>
+	
+	function proc1(rand){
+		arr = ["누가","언제","어디서","무엇을", "어떻게", "왜"]
+
+		//랜덤발생 0~arr.length --> arr[랜덤]
+		rand = Math.floor(Math.random()*arr.length);
+		//arr[랜덤]번째의 문자열로 textNode를 생성
+		txtnode = document.createTextNode(arr[rand]);
+		//p태그 생성
+		ptag = document.createElement('p');
+		//p태그에 textNode를 추가
+		ptag.appendChild(txtnode);
+		//div에 p태그를 추가
+		document.getElementById('result1').appendChild(ptag);
+
+		
+	}
+
+	function proc2(){
+
+		//부모 = div(id= result1)검색접근
+		parent = document.getElementById('result1');
+
+		//마지막 자식 찾기
+		child = parent.lastChild;
+		//자식을 삭제한다.
+		parent.removeChild(child);
+
+	}
+	function proc3(){
+
+
+		arr = ["누가","언제","어디서","무엇을", "어떻게", "왜"]
+
+		//랜덤발생 0~arr.length --> arr[랜덤]
+		rand = Math.floor(Math.random()*arr.length);
+		//arr[랜덤]번째의 문자열로 textNode를 생성
+		txtnode = document.createTextNode(arr[rand]);
+		//p태그 생성
+		ptag = document.createElement('p');
+		//새로운 버튼을 추가
+		btn = document.createElement('button');
+		btn.innerHTML = "삭제";
+		btn.onclick = function proc4(){
+
+				//부모 = div(id= result1)검색접근
+				parent = document.getElementById('result3');
+
+				//마지막 자식 찾기
+				child = parent.lastChild;
+				
+				//자식을 삭제한다.
+				parent.removeChild(child);
+
+				}
+
+		//text와 새로운 버튼을 p태그에 추가
+		ptag.appendChild(txtnode);
+		ptag.appendChild(btn);
+		//div에 p태그를 추가
+		document.getElementById('result3').appendChild(ptag);
+		
+	
+
+	}
+	function proc4(){
+
+	}
+	function proc5(){
+
+	}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h2>dom검색 -추가/ 삭제</h2>
+<pre>
+추가버튼 클릭시
+ - p태그 생성
+ - 랜덤을 이용한 text생성
+   text를 p태그에 -추가
+   p태그를 div에 -추가
+삭제버튼 클릭시
+ - div에서 마지막 자식요소(lastChild)를 삭제한다.  
+</pre>				
+		<button onclick="proc1()" type="button">추가</button>
+		<button onclick="proc2()" type="button">삭제</button>	
+		<div id="result1" ></div>
+	
+	</div>
+
+	<div class="box">
+		<h2>dom검색 -추가/ 삭제</h2>
+<pre>
+추가버튼 클릭시
+ - p태그 생성
+ - 랜덤을 이용한 text생성
+   새로운 버튼을 추가
+   text와 새로운 버튼을 p태그에 추가
+   p태그를 div에 추가
+삭제버튼 클릭시
+ - div에서 마지막 자식요소(lastChild)를   
+</pre>				
+		<button onclick="proc3()" type="button">추가</button>	
+		<div id="result3" ></div>
+	
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+
+<script>
+
+$(function(){ 
+	 $(document).on('mousemove', function(){
+		res = '마우스 좌표 :'+event.pageX + ','+ event.pageY+'<br>';
+	     
+		$('#result1').html(res);
+
+		if(event.pageX == '200' && event.pageY == '200'){
+
+		vtit =  $(this).attr('title');
+		vtxt =  $(this).text();
+			//이미지 생성 
+		$('<img>', {
+			 'src' : '../images/조커3.gif'})
+			 .appendTo('#result1');
+
+		}
+	 })
+ })
+
+</script>
+<style type="text/css">
+.box .d1{
+ width:300px;
+ height:200px; 
+ background-color:pink;
+}
+</style>
+
+</head>
+<body>
+
+<div class="box">
+<h2></h2>
+<pre>
+	mouse를 움직이면  좌표값을 얻어서 
+	result1에 출력 	
+</pre>
+
+<div class="d1"> </div>
+ <br>
+ <button id="btn1"> 버튼 </button>
+ <div id="result1"></div>
+</div>
+</body>
+   </html>

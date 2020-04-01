@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<style>
+ .box div{
+   height : 500px;
+ }
+ img {
+   width : 200px;
+   height : 200px;
+   margin-right : 5px;
+   border-radius : 200px;
+ }
+</style>
+<script>
+ function  startProc(){
+	  //event.target ->이미지
+	// console.log(event.target.id) ;
+	 
+	//이밴트 대상을 설정 -setData("name", value)
+	event.dataTransfer.setData("target_img", event.target.id);
+	
+  }
+  function dropProc(){
+	  //drag대상을 drop - getData("name")
+	  imgid= event.dataTransfer.getData("target_img");
+	 
+	  dragimg = document.getElementById(imgid);
+	  
+	//   //event.target -> div
+	//   event.target.appendChild(dragimg);
+
+	//	이미지 위에 이미지를 drop할때 이미지의 부모(div)를 검색해서 drop
+	console.log(event.target.tagName)
+	if(event.target.tagName == "IMG"){
+		  parent = event.target.parentNode;
+		  parent.appendChild(dragimg);
+	  }else{
+		  event.target.appendChild(dragimg); 
+	  }
+  }
+  function overProc(){
+	  //원래 dragover의 기능을 삭제한다 
+	  event.preventDefault()
+  }
+</script>
+</head>
+<body>
+
+<div class="box" ondragover="overProc()" ondrop="dropProc()">
+ <h2>Drag&Drop이벤트 </h2>
+ <pre>
+     드래그 대상  : 드래그가 가능하도록 설정 : draggable ="true"
+   dragstart :드래그대상을 설정 : event.dataTransfer.setData("name",value)
+   dragover : 원래 기능을 삭제한다 event.preventDefault()
+   drop  : 드래그대상으로 설정된 요소를 drop
+   dragimg = event.dataTransfer.getData("name")
+	     event.target.appendChild(dragimg)
+          
+ </pre>
+
+ <div id="result1" ondragover="overProc()" ondrop="dropProc()"></div>
+ <br>
+ <img id="img1" src="../images/1570823554 (2).gif" draggable="true" ondragstart="startProc()">
+ <img id="img2" src="../images/1571245655.gif" draggable="true" ondragstart="startProc()">
+ <img id="img3" src="../images/호아킨 조커2.gif" draggable="true" ondragstart="startProc()">
+ <img id="img4" src="../images/1570823554.gif" draggable="true" ondragstart="startProc()">
+ <img id="img5" src="../images/엘사.gif" draggable="true" ondragstart="startProc()">
+ 
+ 
+</div>
+</body>
+</html>
+
+
+
+
+
+

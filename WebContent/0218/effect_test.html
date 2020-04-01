@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+$(function(){
+			
+	$('#show').on('click', function(){
+				//기본이 400
+				//swing : 중간만 빠르게
+				$('img').show(3000, 'swing', function(){
+					//show가 완료된 후에 function 실행
+					alert("안녕?");
+				});
+			})
+			
+			$('#hide').on('click', function(){
+				//linear : 일정하게
+				$('img').hide(3000, 'linear', function(){
+					alert("Bye");
+				});
+			})
+			
+			$('#toggle').on('click', function(){
+				$('img').toggle(1000);
+			})
+			
+			$('#sUp').on('click', function(){
+				$('img').slideUp(500);
+			})
+			
+			$('#sDown').on('click', function(){
+				$('img').slideDown('slow');
+			})
+			
+			$('#sTog').on('click', function(){
+				$('img').slideToggle('fast');
+			})
+			
+			$('#fIn').on('click', function(){
+				$('img').fadeIn(500);
+			})
+			
+			$('#fOut').on('click', function(){
+				$('img').fadeOut(1000);
+			})
+			
+			$('#fTo').on('click', function(){
+				$('img').fadeTo(1000, 0.5)
+			})
+
+			$('#fTog').on('click', function(){
+				$('img').fadeToggle(600);
+			})
+			
+		})
+</script>
+
+<style>
+ img{
+   width : 200px;
+   height : 150px;
+ }
+</style>
+</head>
+
+<body>
+	<div class="box">
+		<h2>effect(효과)</h2>
+		<pre>
+$(selector).show(speed, easing, fn)		
+		</pre>
+		<button id="show" type="button">Show</button>
+		<button id="hide" type="button">Hide</button>
+		<button id="toggle" type="button">Toggle</button>
+		<button id="sUp" type="button">SlideUp</button>
+		<button id="sDown" type="button">SlideDown</button>
+		<button id="sTog" type="button">SlideToggle</button>	
+		<button id="fIn" type="button">FadeIn</button>
+		<button id="fOut" type="button">FadeOut</button>
+		<button id="fTo" type="button">FadeTo</button>
+		<button id="fTog" type="button">FadeToggle</button>
+									
+		<div id="result1">
+			<img src="../images/1571237900 (1).gif">
+		</div>
+		
+	   </div>
+</body>
+</html>

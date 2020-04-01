@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/mystyle.css?after">
+	<style>
+
+
+	</style>
+
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#btn1').on('click',function(){
+
+			$('li:first,li:last').css('background','yellow')
+			$('li:lt(4)').css('font-weight','bold')
+						.css('font-size','xx-large')
+			$('li:eq(5)').css('background','red')
+		})
+
+
+		$('#btn2').on('click',function(){
+			$('tr:even').css('background','pink')
+			$('tr:odd').css('background','gray')
+			$('tr:first').css('background','black')
+						  .css('color','white')	
+			$('table').css('width','300px')
+					  .css('height','300px')
+					  .css('text-align','center')
+		})
+	})
+
+</script>
+</head>
+<body>
+	<div class="box">
+		<h2>폼객체</h2>
+<pre>
+
+</pre>				
+		<button id = "btn1" onclick="proc1()" type="button">실행</button>
+	
+		<div id="result1" >
+		<ul>
+		   <li> one   </li>
+		   <li> two   </li>
+		   <li> three </li>
+		   <li> four  </li>
+		   <li> five  </li>
+		   <li> six   </li>
+		   <li> seven </li>
+		   <li> eight </li>
+		   <li> nine  </li>
+		</ul>
+		</div>
+
+	</div>
+
+
+
+	<div class="box">
+		<h2>폼객체</h2>
+<pre>
+
+</pre>				
+		<button id= "btn2" onclick="proc1()" type="button">실행</button>
+	
+		<div id="result1" >
+		<table>
+				<tr> 
+					<td>one</td>
+					<td>62단</td>		
+				</tr>
+				<tr> 
+					<td>two</td>
+					<td>45단</td>		
+				</tr>
+				<tr> 
+					<td>three</td>
+					<td>33단</td>		
+				</tr>
+				<tr> 
+					<td>four</td>
+					<td>72단</td>		
+				</tr>
+				<tr> 
+					<td>five</td>
+					<td>77단</td>		
+				</tr>
+				<tr> 
+					<td>six</td>
+					<td>54단</td>		
+				</tr>
+				<tr> 
+					<td>seven</td>
+					<td>61단</td>		
+				</tr>
+				<tr> 
+					<td>eight</td>
+					<td>52단</td>		
+				</tr>
+				<tr> 
+					<td>nine</td>
+					<td>88단</td>		
+				</tr>
+		</table>			
+		</div>
+
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

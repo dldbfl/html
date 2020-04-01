@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/mystyle.css?after">
+	<style>
+	table{
+		width: 700px;
+   		height: 500px;
+		   text-align: center;
+		}
+	#td1{
+		width: 340px;
+		height: 80px;		
+		font-size: 2.2em;
+	}
+	#td11{
+		width: 300px;
+		height: 80px;		
+		font-size: 2.2em;
+	}
+	#td2{
+		width: 20px;
+	
+	}
+	#td3{
+		
+	}
+	
+	select{
+		width: 100%;
+   		height: 100%;
+	}
+	/* #input1{
+		  width: 300px;
+	} */
+	.box button{
+		border-radius: 0%;
+	}
+	
+	</style>
+
+<script>
+	window.onload = function(){
+		f = document.ff;
+		f.data.focus();
+	}
+	
+	function addProc(){
+		if(window.event.keyCode == 13 || window.event.target.tagName == "BUTTON"){
+		
+		//	입력한 data값을 가져온다. - value;
+		datavalue = f.data.value;
+
+		//	값이 공백이냐? -종료
+		if(datavalue.trim().length == 0){
+			alert("데이터를 입력하세요.")
+			return;
+		}
+
+		//	option 요소를 생성
+		opt = document.createElement("option");
+		//	option 의 value와 text를 설정
+		opt.value = datavalue;
+		opt.text = datavalue;
+		//	select name = left에 추가
+		f.left.appendChild(opt);
+		//	입력한 값을 지운다.
+		f.data.value = "";
+		//	포커스를 인풋에 둔다.
+		f.data.focus();
+		}
+	}
+	function toRigth(){
+		//	왼쪽 select에서 하나를 선택
+		idx = f.left.selectedIndex;
+		//	선택한 항목이 없으면 선택하세요. - return
+		if(idx == -1){
+			alert("선택하세여");
+			return;
+		}
+		//	왼쪽에서 선택한 option의 값을 가져온다.
+		lvalue = f.left.options[idx].value;
+
+		//	오른쪽에 option을 생성해서 추가한다.
+		opt = document.createElement("option");
+		opt.value = lvalue;
+		opt.text = lvalue;
+
+		f.right.appendChild(opt);
+
+		//	왼쪽에서 삭제한다.
+		f.left.removeChild(f.left.options[idx]);
+	}
+	function RightAll(){
+		
+		leng = f.left.length;
+
+		for(i = 0; i<leng; i++){
+
+		//	왼쪽에서 선택한 option의 값을 가져온다.
+		lvalue = f.left.options[0].value;
+
+		//	오른쪽에 option을 생성해서 추가한다.
+		opt = document.createElement("option");
+		opt.value = lvalue;
+		opt.text = lvalue;
+
+		f.right.appendChild(opt);
+
+		f.left.removeChild(f.left.options[0]);
+		}
+
+
+	
+	}
+	function toLeft(){
+		//왼쪽select에서 하나를 선택 
+		idx = f.right.selectedIndex;
+		//선택한 항목이 없으면(-1) 선택하세요 -return
+			if(idx == -1){
+				alert("선택하세요");
+				return;
+			}
+		//왼쪽에서 선택항목이 option의 값을 가져온다.
+		lvalue = f.right.options[idx].value
+		//option을 생성해서 오른쪽에  추가한다.
+		opt = document.createElement("option");
+		opt.value = lvalue;
+		opt.text = lvalue;
+		
+		f.left.appendChild(opt);
+		//왼쪽에서 삭제
+		f.right.removeChild(f.right.options[idx]);
+	}
+	function LeftAll(){
+
+		leng = f.right.length;
+
+		for(i = 0; i<leng; i++){
+
+		//	왼쪽에서 선택한 option의 값을 가져온다.
+		lvalue = f.right.options[0].value;
+
+		//	오른쪽에 option을 생성해서 추가한다.
+		opt = document.createElement("option");
+		opt.value = lvalue;
+		opt.text = lvalue;
+
+		f.left.appendChild(opt);
+
+		f.right.removeChild(f.right.options[0]);
+		}
+	}
+	f
+</script>
+</head>
+<body>
+	<div class="box">
+		<h2>select객체 예제</h2>
+<pre>
+	form 안에 input type=text인 요소가 하나가 있을때 
+	 input요소에서 엔터를 치면 자동 submit이 수행된다
+	
+	 자동 submit이 수행되지 않도록 하기 위해서 
+	 form태그안에 onsubmit="return false;" 를 기술해준다
+
+	button태그는 자동 submit이 수행된다
+	button에서 자동 submit이 수행되지 않도록 하기 위해서
+	button type= "buttom"으로 기술한다.
+
+</pre>	
+	<form name="ff" onsubmit="return false;" >
+		<table border="1">
+			<div>
+			<tr>
+				<td id="td1" colspan="3">select 객체 예제</td>				
+			</tr>
+			<tr>
+				<td id="td11">
+					<select name="left" multiple size="10">
+						<!-- <option value="1">1</option> -->
+					</select>
+				</tdid="td1">
+
+				<td id="td2">
+					<button type="button" onclick="toRigth()">></button></button><br>
+					<button type="button" onclick="RightAll()">>></button><br>
+					<button type="button" onclick="toLeft()"><</button><br>
+					<button type="button" onclick="LeftAll()"><<</button>
+				</td>
+
+				<td>
+					<select name="right" multiple size="15"></select>
+				</td>
+			</tr>
+			<tr >
+				<td id="td3" colspan="3">
+					<input name = "data" id ="input1" type="text" onkeyup="addProc()"> 
+					<button onclick="addProc()" type="button">추가하기</button>
+				</td>
+			</tr>
+			</div>
+		</table>
+	</form>
+
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

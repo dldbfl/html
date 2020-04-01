@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+
+<script>
+
+$(function(){ 
+	 $('#btn1, .d1').on('mousedown', function(){
+		 res = "대상 : " + event.target.tagName  + "<br>";
+		 res += "page좌표 : " + event.pageX + "," + event.pageY + "<br>";
+		 res += "screen좌표 : "  + event.screenX + "," + event.screenY + "<br>";
+	     res += "버튼 : " + event.button +"<br>";
+	     res += "ctrl : " +  event.ctrlKey + "<br>";
+	     
+	     $('#result1').html(res);
+	     
+	     //왼쪽마우스  : 이벤트 대상의 테두리변경 
+	     //오른쪽 미우스 : 이벤트 대상의 배경색 변경 
+	     //가운데 마우스휠 : 이벤트 대상의 가로세로 크기 확대
+	     if(event.button == 0){
+	    	 $(this).css('border','2px dotted green');
+	     }else if(event.button == 1){
+	    	 $(this).css('background','orange');
+	     }else if(event.button == 2){
+	    	 $(this).css('width','+=10px')
+	    	        .css('height','+=10px');
+	     }
+	     
+	     
+	 })
+	 
+	 
+ })
+
+</script>
+<style type="text/css">
+.box .d1{
+ width:300px;
+ height:200px; 
+ background-color:pink;
+}
+</style>
+
+</head>
+<body>
+
+<div class="box">
+<h2></h2>
+<pre>
+	
+	
+</pre>
+
+<div class="d1"> </div>
+ <br>
+ <button id="btn1"> 버튼 </button>
+ <div id="result1"></div>
+</div>
+</body>
+   </html>

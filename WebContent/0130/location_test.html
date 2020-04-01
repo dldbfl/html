@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script type="text/javascript">
+function proc1() {
+	//http://localhost:80/jqpro/0130/test.html?id="korea"
+	res = "href: " + location.protocol + "<br>";
+	res += "protocol: " + location.protocol+ "<br>";
+	res += "host: " + loacation.host+ "<br>";
+	res += "hostname: " + location.hostname+ "<br>";
+	res += "port: " + location.port+ "<br>";
+	res += "pathname: " + location.pathname+ "<br>";
+	
+	document.getElementById('result1').innerHTML = res;
+}
+
+function proc2(){
+	location.href = "test.jsp"
+}
+
+function goPage(){
+	location.href = "test.jsp"
+}
+
+function gopagePost(){
+	//입력한 값(hidden값)을 서버프로그램으로 보낸다.
+	//form이 있기때문에 document.myform...이런식으로 직접 버튼에 전송보내는걸 하게한다.
+	
+	mf = document.myform
+	
+	mf.action = "testpost.jsp";
+	mf.method = "post";
+	mf.submit();
+}
+
+function goReplace(){
+	location.replace("test.jsp");
+}
+
+function goReload(){
+	str = ["Hello","HTML","CSS","JAVASCRIPT","JSP","JQuery"]
+	
+	rand = Math.floor(Math.random()*str.length);
+	res = "<h1>" + str[rand] + "</h1>";
+	
+	result = document.getElementById("result2");
+	
+	result.innerHTML = res;
+	result.style.color = "red";
+	
+	setTimeout(function(){
+		location.reload();
+	},1000)
+	
+}
+</script>
+</head>
+<body>
+
+<div class="box">
+<h2></h2>
+<pre>
+url의 정보를 얻는다 
+
+href: 전체 url http://localhost/jqpro/0130/location_test.html
+port: 
+host: hostname과 port localhost
+hostname: localhost
+pathname:
+protocol: http://	
+	
+</pre>
+<button type="button" onclick="proc1()">location</button>
+<div id="result1"></div>
+</div>
+
+
+<div class="box">
+	<h2>Location 객체</h2>
+<pre>
+- location객체의 사용
+1. 자동으로 특정페이지로 이동할 때 사용
+2. a태그이용
+3. 이벤트(get)
+4. 이벤트(post)
+5. 새로운 문서로 대체
+6. 현재 문서를 다시 로드	
+</pre>
+	-자동으로 특정페이지로 이동할 때 사용 : location.href
+	<button type="button" onclick="proc2()">자동</button>
+	<br>
+	-a태그 이용
+	<a href="javascript:goPage()">a태그 이동</a>
+	<!-- <a href = '#'onclick="goPage()">?!</a> -->
+	<br>
+	-이벤트(get)
+	<button type="button" onclick="goPage()">get</button>
+	<br>
+	-이벤트(post)
+	<form name="myform" >
+		<input type="hidden" name="abc" value="korea";>
+		<button type="button" onclick="gopagePost()">post</button>
+	</form>
+	<br>
+	-새로운 문서로 대체: 원래 페이지로 돌아올 수 없음.
+	<button type="button" onclick="goReplace()">대체</button>
+	<br>
+	-현재 문서를 다시 로드
+	<button type="button" onclick="goReload()">reload</button>
+	
+	<div id="result2"></div>
+	</div>
+</body>
+</html>

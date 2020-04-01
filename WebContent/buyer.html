@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+$(function(){
+	$('#btn1').on('click', function(){
+		//요청시 서블릿실행 
+		/* $.get(
+				'/jqpro/BuyerList',
+				function(res){
+					
+				},
+				'json'
+		)
+		 */
+		 /////////////////////////////////
+		$.ajax({
+			url : '/jqpro/BuyerList',
+			success : function(res){
+			
+				code = "";;
+				$.each(res, function(i){
+					code += "<p id='" + res[i].id + "'>" + res[i].name + "</p>"
+				})
+				$('#names').html(code);
+			},
+			error : function(xhr){
+				alert("상태 :" + xhr.status 
+						+ "\n 정보 : " + xhr.statusText);
+			},
+			dataType :'json'
+			
+		})
+	}) 
+	
+	$('#names').on('click','p', function(){
+		idvalue= $(this).attr('id');
+		
+		$.ajax({
+			url : '/BuyerList',
+			type : 'post',
+			data : { "id" : idvalue},
+			success : function(res){
+				code = "<table>";
+				
+				code += "<tr><td>BUYER_ID</td>";
+				code += "<td>" + res.id + "</td></tr>"
+				
+				
+				code += "<tr><td>BUYER_LGU</td>";
+				code += "<td>" + res.lgu + "</td></tr>"
+				
+				code += "<tr><td>BUYER_NAMAE</td>";
+				code += "<td>" + res.name + "</td></tr>"
+				
+				code += "<tr><td>BUYER_MAIL</td>";
+				code += "<td>" + res.mail + "</td></tr>"
+				
+				code += "<tr><td>BUYER_BANKNAME</td>";
+				code += "<td>" + res.bname + "</td></tr>"
+				
+				code += "<tr><td>BUYER_BANKNO</td>";
+				code += "<td>" + res.bno + "</td></tr>"
+				
+				code += "<tr><td>BUYER_BANK</td>";
+				code += "<td>" + res.bank + "</td></tr>"
+				
+				code += "<tr><td>BUYER_ZIP</td>";
+				code += "<td>" + res.zip + "</td></tr>"
+				
+				code += "<tr><td>BUYER_ADD1</td>";
+				code += "<td>" + res.add1 + "</td></tr>"
+				
+				code += "<tr><td>BUYER_ADD2</td>";
+				code += "<td>" + res.add2 + "</td></tr>"
+				
+				code += "</table>";
+				
+				$('#detail').html(code);
+			},
+			error :function(xhr){
+				alert("상태 : " + xhr.status);
+			},
+			dataType : 'json'
+		})
+	})
+})
+</script>
+</head>
+<body>
+
+	<div class="box">
+		<h2></h2>
+		<pre></pre>	
+		
+	<button  type="button" id="btn1">실행</button>
+	<div id="result1"></div>
+	</div>
+
+
+</body>
+</html>

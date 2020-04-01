@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/mystyle.css?after">
+	<style>
+		img{
+			width: 200px;
+			height: auto;
+		}
+	</style>
+
+<script>
+	
+	function proc1(){
+		a = setInterval(function(){
+			//result1으로 접근 검색 - 부모
+			parent = document.getElementById('result1');
+			//img태그로 접근 검색 - 자식
+			//img의 첫번째 요소로 접근 검색
+			child = document.getElementsByTagName('img')[0];
+			//삭제 - 부모.removeChild(자식)
+			parent.removeChild(child);
+			//삭제된 요소를 부모의 마지막요소로 추가
+			parent.appendChild(child);
+
+			//appendChild-
+			//기존의 있는 요소를 append할때는 기존의 요소가 이동의 의미가 된다
+			//그러므로 removeChild는 생략할 수 있다.
+		},500)
+	}
+	function proc2(){
+
+	}
+	function proc3(){
+
+	}
+	function proc4(){
+
+	}
+	function proc5(){
+
+	}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h2>이미지회전</h2>
+<pre>
+	이건 베이스 폼을 가상으로 만들어 둔것입니다. 복사해서 지운 뒤 실행하세요.
+</pre>				
+		<button onclick="proc1()" type="button">실행</button>
+		<button onclick="proc2()" type="button">stop</button>
+		<div id="result1" >
+
+		<img src="../images/storm.jpg" alt="">
+		<img src="../images/sunshine.jpg" alt="">
+		<img src="../images/hubble.jpg" alt="">
+		<img src="../images/rest1.jpg" alt="">
+		<img src="../images/poodle.png" alt="">
+		<img src="../images/pome.png" alt="">
+		<img src="../images/pizza.jpg" alt="">
+		<img src="../images/movie.jpg" alt="">
+		<img src="../images/사자.jpg" alt="">
+		
+
+		</div>
+		
+
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

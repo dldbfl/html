@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/mystyle.css?after">
+	
+<script>
+	function proc1(){
+		df = document.ff;
+
+		//입력한 값 가져오기
+		namevalue = df.name.value
+		telvalue = df.tel.value
+		
+		res = "이름 : "+ namevalue + "<br>";
+		res += "전화번호 : "+ telvalue;
+
+		//부모창에 출력하기
+		opener.document.getElementById('result1').innerHTML = res;
+
+		window.close();
+	}
+	
+
+	
+</script>
+</head>
+<body>
+	<div class="box">
+		<h2>winsub 자식창</h2>
+<pre>
+	window_test.html에서 새롭게 열린창임
+	window_test의 자식창이다.
+
+	버튼을 클릭하면 입력한 값을 부모창으로 보낸다.
+	각 요소에 name을 이용한 접근 방법
+
+	document.getElementsByname("name")[0];	
+	document.getElementsByname("tel")[0];
+
+	document.ff.name;
+	document.ff.tel;
+</pre>	
+
+	<form name="ff">
+		이름 : <input type="text" name = "name"><br>
+		전화번호 : <input type="text" name="tel"><br>
+	</form>
+		<button onclick="proc1()" type="button">실행</button>
+		<div id="result1"></div>
+	</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

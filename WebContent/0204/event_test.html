@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/mystyle.css?after">
+	<style>
+
+	</style>
+
+<script>
+	
+	function changeColor(c){
+		result = document.getElementById('result1')
+	
+		result.style.background = c;
+	}
+
+	window.onload = function(){
+		document.body.style.backgroundColor = "red"
+	}
+	function loadProc(){
+		document.body.style.backgroundColor = "pink"
+		f= document.ff;
+	}
+	function nameProc(){
+		
+		// 입력한 값 가져오기
+		namevalue = f.name.value;
+		val="";
+
+		// 한글자씩 대소문자 변경
+		for(i=0; i<namevalue.trim().length;i++){
+			if(namevalue.substr(i,1) >= "A" && namevalue.substr(i,1) <= "Z"){
+				val += namevalue.substr(i,1).toLowerCase();
+			}else if(namevalue.substr(i,1) >= "a" && namevalue.substr(i,1) <= "z"){
+				val += namevalue.substr(i,1).toUpperCase();
+			}
+		}
+
+		// 넣기
+		f.name.value = val;
+
+		// 한꺼번에 대소문자 변경
+// 		if(namevalue >= "A" && namevalue <= "Z"){
+// 			val = namevalue.toLowerCase();
+// 		}else if(namevalue >= "a" && namevalue <= "z"){
+// 			val = namevalue.toUpperCase();
+// 		}
+
+		// lowervalue = namevalue.toLowerCase();
+		// f.name.value = lowervalue;
+	}
+	function selProc(){
+
+	}
+	function proc5(){
+
+	}
+</script>
+</head>
+<body onload="loadProc()">
+	<div class="box">
+		<h2>폼객체</h2>
+<pre>
+	body onload="loadProc()"
+	window.onload =function(){}
+	onload와 window.onload와 같이쓸때
+	window.onload는 무시된다.	
+</pre>		
+		<input type="radio" name="color" onclick="changeColor('lightblue')">파랑		
+		<input type="radio" name="color" onclick="changeColor('lightgreen')">녹색
+		
+		<div id="result1" ></div>
+	
+	</div>
+
+	<form name="ff">
+	이름 : <input type="text" name="name" onchange="nameProc()">
+	&nbsp;&nbsp;&nbsp;
+	선택 : <select name="sel" onchange="selProc()" >
+		<option value="봄">봄</option>
+		<option value="여름">여름</option>
+		<option value="가을">가을</option>
+		<option value="겨울" selected>겨울</option>
+		</select>
+	</form>
+</body>
+</html>

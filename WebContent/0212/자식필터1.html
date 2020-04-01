@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+$(function(){
+	$('button').on('click',function(){
+		$("li:first").css("background","yellow")
+		$("li:first-child").css('border','4px solid red')
+	})
+})
+</script>
+</head>
+<body>
+
+	<div class="box">
+		<h2></h2>
+		<pre>
+:first-child
+:last-child
+
+	모든 li중 가장 첫번째 하나를 선택
+$('li:first').css('background', 'yellow');
+			
+ol그룹에서 각각 하나씩 선택 
+$('li:first-child').css('border', '4px solid red');	
+		</pre>	
+	
+		
+	<button onclick="proc1()" type="button">실행</button>
+		
+	<div id="result1">
+
+
+		<h4>여자에게 인기 있는 남자들</h4>
+		<ol>
+			<li>능력있는 남자</li>
+			<li>돈 많은 남자</li>
+			<li>잘생긴 남자</li>
+			<li>프로그래머</li>
+		</ol>
+		<h4>남자에게 인기 있는 여자들</h4>
+		<ol>
+			<li>예쁜 여자</li>
+			<li>귀여운 여자</li>
+			<li>섹시한 여자</li>
+		</ol>
+	</div>
+	</div>
+
+
+</body>
+</html>

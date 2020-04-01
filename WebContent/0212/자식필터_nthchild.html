@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+$(function(){
+	$('button:eq(0)').on('click',function(){
+		$(".tab1 td:first-child").css("background","darkgray")
+		$(".tab1 td:nth-child(2)").css("background","gray")
+		$(".tab1 td:last-child").css("background","mintcream")
+		$(".tab1 tr:first-child td").css("background","black")
+									.css("color","white")
+		
+	})
+	$('button:eq(1)').on('click',function(){
+		$(".tab2 tr:first-child").css("background","pink")
+		$(".tab2 tr:nth-child(2)").css("background","plum")
+		$(".tab2 tr:nth-child(3)").css("background","plum")
+		$(".tab2 tr:nth-child(4)").css("background","plum")
+		$(".tab2 tr:last-child").css("background","olive")
+	})
+})
+</script>
+<style>
+	table{
+		width: 300px;
+		text-align: center;
+	}
+</style>
+
+</head>
+<body>
+
+	<div class="box">
+		<h2></h2>
+		<pre>
+:nth_child(인덱스)
+:nth_child(even/odd)
+:nth_child(수식) :nth_child(4n)
+
+		</pre>	
+	
+		
+	<button onclick="proc1()" type="button">실행</button>
+		
+		<div id="result1">
+			<table class="tab1">
+				<tr>
+					<td>이름</td>
+					<td>주소</td>
+					<td>전화번호</td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td>주소</td>
+					<td>전화번호</td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td>주소</td>
+					<td>전화번호</td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td>주소</td>
+					<td>전화번호</td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td>주소</td>
+					<td>전화번호</td>
+				</tr>
+
+			</table>
+		</div>
+		<button onclick="proc1()" type="button">실행</button>
+		<div id="result1">
+			<table class="tab2">
+				<tr>
+					<td>이름</td>
+					<td>주소</td>
+					<td>전화번호</td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td>주소</td>
+					<td>전화번호</td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td>주소</td>
+					<td>전화번호</td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td>주소</td>
+					<td>전화번호</td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td>주소</td>
+					<td>전화번호</td>
+				</tr>
+
+			</table>
+		</div>
+	</div>
+
+
+</body>
+</html>

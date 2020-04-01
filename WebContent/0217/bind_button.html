@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css?after">
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+$(function(){
+	//$('.but').bind('click', function(){ })
+	$('.but').on('click', function(){
+		$('<button/>', {
+			'class' : 'but',
+			'type' : 'button',
+			'text' : 'new button'
+			
+		}).appendTo('#result1')
+	})
+	
+})
+   </script>
+   </head>
+   <body>
+   
+   <div class="box">
+	<h2>bind </h2>
+<pre>
+기존의 버튼에만 이벤트 핸들러 적용
+새롭게 만들어진 요소에는 이벤트핸들러 적용 안됨
+		</pre>
+	<div id="d1">
+	  <button class="but" type="button">버튼1</button>
+	  <button class="but" type="button">바튼2</button>
+	  <button class="but"  type="button">바튼3</button>
+	  
+	  
+	</div>
+	<button  type="button">해제</button>
+	<div id="result1">
+	
+	</div>
+	
+   </div>
+   </body>
+</html>
