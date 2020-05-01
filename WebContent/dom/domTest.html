@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script src="../js/jquery-3.4.1.min.js"></script>
+
+<script type="text/javascript">
+function view(){
+	// id를 이용한 엘리먼트 객체 구하기
+	// var myDiv = document.getElementById("testId");
+	
+	//alert(myDiv.innerHTML); // 내용 중 HTML코드까지 읽어온다.
+	//myDiv.innerHTML = "<h2>새로운 내용</h2>";
+	
+	//alert(myDiv.textContent); // 내용 중 문자열만 읽어온다.
+	//myDiv.textContent = "<h2>새로운 내용</h2>";
+
+	/*
+	// class속성을 이용한 처리
+	//var oddList = document.getElementsByClassName("odd");
+	var oddList = document.getElementsByTagName("div");
+	//alert(oddList.length);
+	var str = "";
+	for(var i=0; i<oddList.length; i++){
+		//str += (i+1) + "번째 값 : " + oddList[i].innerHTML + "\n";
+		str += (i+1) + "번째 값 : " + oddList[i].textContent + "\n";
+	}
+	alert(str);
+	*/
+	/*
+	var body = document.body;  // body엘리먼트 구하기
+	//alert(body.innerHTML);
+	//alert(body.firstChild.tagName);
+	//alert(body.firstElementChild.firstChild.nodeValue);
+	*/
+	
+	var testDIV = document.getElementById("testId");
+	//alert(testDIV.parentNode.tagName);
+	//alert(testDIV.parentElement.tagName);
+	
+	//alert("next => " + testDIV.nextElementSibling.innerHTML);
+	//alert("prev => " + testDIV.previousElementSibling.innerHTML);
+	
+	
+	//var html = document.documentElement;  // 루트 엘리먼트 (HTML)
+	//alert(html.tagName);
+}
+
+function add(){
+	// <img src="../images/audio.png">
+	var myImg = document.createElement("img"); // img태그 생성
+	
+	// 만들어진 태그(엘리먼트)에 속성 추가하기
+	myImg.setAttribute("src", "../images/audio.png");
+	
+	// 이미지가 나타날 부모 엘리먼트를 구한다.
+	var conDiv = document.getElementById("container");
+	
+	// 찾은 부모노드의 자식 엘리먼트로 추가 (끝에 추가된다.)
+	conDiv.appendChild(myImg);
+
+}
+
+function add2(){
+	// <a href="http://www.daum.net">Daum사이트 가기</a>
+	
+	// 1. a태그 만들기  ==>   <a></a>
+	var aTag = document.createElement("a");
+	
+	// 2. a태그의 내용으로 들어갈 Text노드 생성
+	var aCont = document.createTextNode("Daum사이트 가기");
+	
+	// 3.만들어진 TextNode를 a태그의 자식노드로 추가한다.
+	aTag.appendChild(aCont);  // ==>  <a>Daum사이트 가기</a>
+	
+	// 4. 만들어진 a태그에 속성을 추가한다.
+	aTag.setAttribute("href", "http://www.daum.net");
+	
+	// 5. 최종적으로 만들어진 a태그를  문서에 추가한다.
+	
+	// 부모
+	var conDiv = document.getElementById("container");
+	
+	// 기준노드
+	var testDiv = document.getElementById("test");
+	
+	// 추가)
+	//conDiv.insertBefore(aTag, testDiv); // 기준노드 이전에 추가하기
+	
+	//conDiv.insertAfter(aTag, testDiv); // insertAfter는 없음
+	
+	//기준노드 뒤쪽에 추가하기
+	conDiv.insertBefore(aTag, testDiv.nextElementSibling);
+	
+	//번외
+	//conDiv.appendChild(document.getElementById("testId"));
+	
+}
+
+function del(){
+	//	삭제할 엘리먼트(태그) 찾기
+	var conDiv = document.getElementById("container");
+	//conDiv.remove();
+	
+	conDiv.parentNode.removeChild(conDiv);
+}
+
+
+
+</script>
+<style>
+#container{
+	width : 800px;
+	border : 2px solid blue;
+}
+#test{
+	width : 600px;
+	border : 1px solid red;
+}
+</style>
+</head>
+<body>
+
+<div id="container">
+	<div>앞쪽</div>
+	<div id="test">연습중.....</div>
+	<div>뒤쪽</div>
+</div>
+
+
+<div class="odd">첫번째  DIV</div>
+<div id="testId">두번째  <span>DIV</span></div>
+<div class="odd">세번째  DIV</div>
+<div>네번째  DIV</div>
+<div class="odd">다섯번째  DIV</div>
+
+<br><hr color="red"><br>
+<form>
+	<input type="button" onclick="view()" value="확인">
+	<input type="button" onclick="add()" value="추가하기">
+	<input type="button" onclick="add2()" value="추가하기2">	
+	<input type="button" onclick="del()" value="삭제하기">
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
